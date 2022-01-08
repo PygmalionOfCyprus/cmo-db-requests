@@ -1,0 +1,197 @@
+name: New Ship Request
+description: Request a new ship/boat/watercraft be added to the DB.
+title: "[Ship]: "
+# labels: ["bug", "triage"]
+# assignees:
+#   - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this request!
+  - type: checkboxes
+    id: hypo
+    attributes:
+      label: Hypothetical?
+      description: Is this a hypothetical vessel, i.e. one not yet in-service or never placed in service?
+      options:
+        - label: This is a hypothetical unit.
+          required: false
+  - type: input
+    id: name
+    attributes:
+      label: Vessel Name
+      description: If requesting a specific vessel, provide classification, pennant number, and name (where known).
+      placeholder: ex. Y 467 Harekaze
+    validations:
+      required: true
+  - type: input
+    id: class
+    attributes:
+      label: Class
+      description: To which class does the ship belong (if applicable)?
+      placeholder: ex. Kagerou-class
+    validations:
+      required: false
+  - type: input
+    id: operatorcountry
+    attributes:
+      label: Country
+      description: Which country did this ship serve?
+      placeholder: ex. Japan
+    validations:
+      required: false
+  - type: input
+    id: in-service
+    attributes:
+      label: Year Commissioned
+      description: When was the ship type first commissioned in national service?
+      placeholder: ex. 2016
+    validations:
+      required: false
+  - type: input
+    id: out-of-service
+    attributes:
+      label: Year Decommissioned
+      description: When was the ship type decommissioned in national service? (This may be later than the nameship's decommissioning.)
+      placeholder: ex. 2016
+    validations:
+      required: false
+  - type: input
+    id: length
+    attributes:
+      label: Length (m)
+      placeholder: ex. 118.5
+    validations:
+      required: true
+  - type: input
+    id: beam
+    attributes:
+      label: Beam (m)
+      placeholder: ex. 10.8
+    validations:
+      required: true
+  - type: input
+    id: draft
+    attributes:
+      label: Draft (m)
+      placeholder: ex. 3.76
+    validations:
+      required: true
+  - type: input
+    id: empty-displacement
+    attributes:
+      label: Empty Displacement (Tonnes)
+    validations:
+      required: false
+  - type: input
+    id: std-displacement
+    attributes:
+      label: Standard Displacement (Tonnes)
+    validations:
+      required: true
+  - type: input
+    id: full-displacement
+    attributes:
+      label: Full Displacement (Tonnes)
+    validations:
+      required: false
+  - type: input
+    id: crew
+    attributes:
+      label: Complement
+      placeholder: ex. 31
+    validations:
+      required: true
+  - type: input
+    id: sea-state
+    attributes:
+      label: Max Sea State
+      description: What is the highest Sea State in which this ship can effectively operate?
+      placeholder: ex. 5
+    validations:
+      required: false
+  - type: input
+    id: propulsion
+    attributes:
+      label: Propulsion
+      placeholder: ex. 2x M-401B Diesels
+    validations:
+      required: true
+  - type: input
+    id: max-speed
+    attributes:
+      label: Flank Speed (kt)
+    validations:
+      required: true
+  - type: input
+    id: range
+    attributes:
+      label: Range (nm) at Speed (kt)
+      placeholder: ex. 1000nm @ 15kts
+    validations:
+      required: true
+  - type: input
+    id: fuel
+    attributes:
+      label: Fuel Capacity (kg)
+    validations:
+      required: false
+  - type: textarea
+    id: sensors
+    attributes:
+      label: Sensors
+      description: List the ship's sensors. All of them, if you can -- not just the most important ones. If you don't know an exact type, indicate its presence with a generic.
+      placeholder: |
+        2x Generic Navigation Radar
+        1x TRS-3D
+        2x STIR 1.2 Mk2
+    validations:
+      required: true
+  - type: textarea
+    id: mounts
+    attributes:
+      label: Mounts
+      description: List the ship's mounts (i.e., weapons). Guns, missiles, torpedoes, VLS...anything that kills people.
+      placeholder: |
+        1x 76mm/62 OTO Melara Super Rapido
+        2x 30mm Typhoon RWS
+        2x MM.40 Quad Launchers
+    validations:
+      required: true
+  - type: textarea
+    id: facilities
+    attributes:
+      label: Aircraft & Docking Facilities
+      description: List any docking and/or aircraft facilities.
+      placeholder: |
+        2x Davits for 7m RHIB
+        1x Pad/Hangar for Medium Helicopter
+    validations:
+      required: false
+  - type: dropdown
+    id: codes
+    attributes:
+      label: Ship Codes
+      description: Indicate if any of the following relevant DB codes apply to this vessel.
+      multiple: true
+      options:
+        - Nuclear Shock Resistant
+        - Degaussed Steel Hull
+        - Onboard Degaussing Gear (Magnetometer) [Minesweeper]
+        - Prairie Masker
+        - Advanced Quieting
+        - Helo In-Flight Refuel (HIFR) Capable
+        - Passive or Single Stabilizers
+        - Dual or Triple Stabilizers
+        - Hovercraft/SES (-40% DP Penalty)
+        - Catamaran/Trimaran Multihull (-30% DP Penalty)
+        - Wooden Hull Construction (-30% DP Penalty)
+        - Wooden Hull [Minesweeper]
+        - Glass Reinforced Polyester (GRP) Construction (-20% DP Penalty)
+        - Glass Reinforced Polyester (GRP) Hull [Minesweeper]
+        - All Aluminum Construction (-30% DP Penalty)
+        - Aluminum Superstructure Only (-20% DP Penalty)
+        - Built to Mercantile Standards (-30% DP Penalty)
+        - Low Construction Standards (-40% DP Penalty)
+        - Laid Down Before 1930 (-20% DP Penalty)
