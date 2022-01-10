@@ -1,62 +1,91 @@
 name: New Ship Request
-description: Request a new ship/boat/watercraft be added to the DB.
-title: "[Ship]: "
+description: This form is used to request a new ship/boat/watercraft.
+title: "New Ship: "
 # labels: ["bug", "triage"]
 # assignees:
 #   - octocat
+
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this request!
+        Thank you for taking the time to submit a new ship request!
+
+        ### On Class Requests
+        If you're requesting an entire class of ship rather than a specific vessel, please fill out the form as if for the class nameship. For example, if requesting the Arleigh Burke-class, fill out the form as if for DDG-51.
+
+        If the class saw significant changes/blocks/flights/etc., it may be worth filing separate requests to cover these differences. Please fill out the follow-on forms as if for the block/flight nameship. For example, if requesting a Flight II Arleigh Burke-class, fill out the form as if for DDG-72.
+
+        ### On Multinational Vessels
+        Be cautious filing single requests for ships in the service of multiple multiple countries. Most ships are sold with different fittings or refit on transfer to different countries; these changes often warrant separate requests.
+
+        ### ...Okay, how much of this do I *really* need to fill out?
+        Although only some of these fields are "required," please do your best to supply as much information as possible. What you don't give us, we need to hunt down ourselves or estimate.
+
+        If you can't (or don't want) to provide this information, consider whether filing a DB request will be helpful.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Basic Information
+        Please provide some basic information on the ship. 
+        
+        This is used to determine how the ship appears in-sim and in the DB viewer.
+
   - type: checkboxes
     id: hypo
     attributes:
-      label: Hypothetical?
-      description: Is this a hypothetical vessel, i.e. one not yet in-service or never placed in service?
+      label: Hypothetical
+      description: Is this a hypothetical vessel, i.e. one not yet or never placed in service?
       options:
-        - label: This is a hypothetical unit.
+        - label: "Yes"
           required: false
+
   - type: input
     id: name
     attributes:
-      label: Vessel Name
-      description: If requesting a specific vessel, provide classification, pennant number, and name (where known).
+      label: Name
+      description: Provide classification, pennant number, and name (where applicable).
       placeholder: ex. Y 467 Harekaze
     validations:
       required: true
+
   - type: input
     id: class
     attributes:
       label: Class
-      description: To which class does the ship belong (if applicable)?
       placeholder: ex. Kagerou-class
     validations:
       required: false
+
   - type: input
     id: operatorcountry
     attributes:
       label: Country
-      description: Which country did this ship serve?
       placeholder: ex. Japan
     validations:
       required: false
+
   - type: input
     id: in-service
     attributes:
-      label: Year Commissioned
-      description: When was the ship type first commissioned in national service?
-      placeholder: ex. 2016
+      label: In Commission
+      description: |
+        When was the *class* in service?
+        
+        If requesting a specific vessel, this will match the vessel's service dates. If requesting a class (and therefore modelling a nameship), the out-of-service date may be much later than the nameship's decommissioning.
+      placeholder: ex. 1991-Present
     validations:
       required: false
-  - type: input
-    id: out-of-service
+
+  - type: markdown
     attributes:
-      label: Year Decommissioned
-      description: When was the ship type decommissioned in national service? (This may be later than the nameship's decommissioning.)
-      placeholder: ex. 2016
-    validations:
-      required: false
+      value: |
+        ## Dimensions and Tonnage
+        Please provide measurements for the ship.
+        
+        This is used to determine a number of critical factors in-sim, including "damage points" (DP), signature, etc.
+
   - type: input
     id: length
     attributes:
@@ -64,6 +93,7 @@ body:
       placeholder: ex. 118.5
     validations:
       required: true
+
   - type: input
     id: beam
     attributes:
@@ -71,6 +101,7 @@ body:
       placeholder: ex. 10.8
     validations:
       required: true
+
   - type: input
     id: draft
     attributes:
@@ -78,24 +109,29 @@ body:
       placeholder: ex. 3.76
     validations:
       required: true
-  - type: input
-    id: empty-displacement
-    attributes:
-      label: Empty Displacement (Tonnes)
-    validations:
-      required: false
+
   - type: input
     id: std-displacement
     attributes:
-      label: Standard Displacement (Tonnes)
+      label: Standard Displacement (t)
+      description: Interchangeable with normal. If only a single number is provided for displacement, assume it's standard.
     validations:
       required: true
+
   - type: input
     id: full-displacement
     attributes:
-      label: Full Displacement (Tonnes)
+      label: Full Displacement (t)
     validations:
       required: false
+
+  - type: input
+    id: empty-displacement
+    attributes:
+      label: Empty Displacement (t)
+    validations:
+      required: false
+
   - type: input
     id: crew
     attributes:
@@ -103,6 +139,7 @@ body:
       placeholder: ex. 31
     validations:
       required: true
+
   - type: input
     id: sea-state
     attributes:
@@ -111,87 +148,164 @@ body:
       placeholder: ex. 5
     validations:
       required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Propulsion
+        Please provide some information on propulsion, speed, etc. for the ship.
+        
+        This is used to determine...well, take a wild guess.
+
+  - type: dropdown
+    id: propulsion-type
+    attributes:
+      label: Primary Propulsion Type
+      description: For CODAG, etc. select "Diesel".
+      multiple: false
+      options:
+        - Diesel
+        - Steam
+        - Gas Turbine
+        - Gasoline
+        - Electric
+        - Sail
+    validations:
+      required: true
+
   - type: input
     id: propulsion
     attributes:
       label: Propulsion
-      placeholder: ex. 2x M-401B Diesels
+      description: Number and type of engines. For CODAG, etc. you can specify here.
+      placeholder: ex. 2x MAN 12V28/33D Diesels, 1x MT-30 Gas Turbine, CODAG
     validations:
       required: true
-  - type: input
-    id: max-speed
-    attributes:
-      label: Flank Speed (kt)
-    validations:
-      required: true
-  - type: input
-    id: range
-    attributes:
-      label: Range (nm) at Speed (kt)
-      placeholder: ex. 1000nm @ 15kts
-    validations:
-      required: true
+
   - type: input
     id: fuel
     attributes:
       label: Fuel Capacity (kg)
     validations:
       required: false
+
+  - type: input
+    id: max-speed
+    attributes:
+      label: Flank Speed (kt)
+    validations:
+      required: true
+
+  - type: input
+    id: range
+    attributes:
+      label: Range (nm) at Speed (kt)
+      description: This will usually be at the ship's cruise speed.
+      placeholder: ex. 1000nm @ 15kts
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Seeing & Shooting
+        This is where the fun begins. Please list as many of the ship's sensors and mounts (i.e. weapons) as you can.
+
   - type: textarea
     id: sensors
     attributes:
       label: Sensors
-      description: List the ship's sensors. All of them, if you can -- not just the most important ones. If you don't know an exact type, indicate its presence with a generic.
+      description: | 
+        List the ship's sensors. All of them, if you can -- not just the most important ones. If you don't know an exact model, record a generic and provide as much supplementary information as you can.
+
+        Please place each mount on a new line as in the example.
       placeholder: |
-        2x Generic Navigation Radar
+        2x Generic Navigation Radar (Furuno)
         1x TRS-3D
         2x STIR 1.2 Mk2
     validations:
       required: true
+
   - type: textarea
     id: mounts
     attributes:
       label: Mounts
-      description: List the ship's mounts (i.e., weapons). Guns, missiles, torpedoes, VLS...anything that kills people.
+      description: |
+        List the ship's mounts (i.e., weapons): guns, missiles, torpedoes, VLS, etc.
+
+        Please place each mount on a new line as in the example.
       placeholder: |
         1x 76mm/62 OTO Melara Super Rapido
         2x 30mm Typhoon RWS
         2x MM.40 Quad Launchers
     validations:
       required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Miscellanious Capabilities
+        Finally, please describe any other special capabilities the ship has.
+
   - type: textarea
     id: facilities
     attributes:
       label: Aircraft & Docking Facilities
-      description: List any docking and/or aircraft facilities.
+      description: |
+        List any docking and/or aircraft facilities.
+
+        Please place each mount on a new line as in the example.
       placeholder: |
         2x Davits for 7m RHIB
         1x Pad/Hangar for Medium Helicopter
     validations:
       required: false
+
   - type: dropdown
     id: codes
     attributes:
       label: Ship Codes
-      description: Indicate if any of the following relevant DB codes apply to this vessel.
+      description: Indicate which (if any) of the following DB codes apply to this vessel.
       multiple: true
       options:
         - Nuclear Shock Resistant
         - Degaussed Steel Hull
-        - Onboard Degaussing Gear (Magnetometer) [Minesweeper]
+        - Onboard Degaussing Gear (Magnetometer)
         - Prairie Masker
         - Advanced Quieting
-        - Helo In-Flight Refuel (HIFR) Capable
         - Passive or Single Stabilizers
         - Dual or Triple Stabilizers
-        - Hovercraft/SES (-40% DP Penalty)
-        - Catamaran/Trimaran Multihull (-30% DP Penalty)
-        - Wooden Hull Construction (-30% DP Penalty)
-        - Wooden Hull [Minesweeper]
-        - Glass Reinforced Polyester (GRP) Construction (-20% DP Penalty)
-        - Glass Reinforced Polyester (GRP) Hull [Minesweeper]
-        - All Aluminum Construction (-30% DP Penalty)
-        - Aluminum Superstructure Only (-20% DP Penalty)
-        - Built to Mercantile Standards (-30% DP Penalty)
-        - Low Construction Standards (-40% DP Penalty)
-        - Laid Down Before 1930 (-20% DP Penalty)
+        - Hovercraft/SES
+        - Catamaran/Trimaran Multihull
+        - Wooden Hull Construction
+        - Glass Reinforced Polyester (GRP) Construction
+        - All Aluminum Construction
+        - Aluminum Superstructure Only
+        - Built to Mercantile Standards
+        - Low Construction Standards
+        - Laid Down Before 1930
+        - Helo In-Flight Refuel (HIFR) Capable
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Final Touches
+
+  - type: textarea
+    id: comments
+    attributes:
+      label: Comments
+      description: Anything else you think we need to know in order to effectively model this platform.
+    validations:
+      required: false
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: |
+        Please list all the sources you used to find the information you provided. If offline, provide title, author, and page.
+
+        We do check these where possible. If we can't corroborate your information, we may provide replacements from our own sources or discard your request entirely.
+    validations:
+      required: true
