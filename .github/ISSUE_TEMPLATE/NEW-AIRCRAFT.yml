@@ -1,0 +1,325 @@
+name: New Aircraft Request
+description: This form is used to request a new aircraft.
+# title: "New Aircraft: "
+labels: ["addition", "aircraft"]
+# assignees:
+#   - octocat
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to submit a new aircraft request!
+
+        ### ...Okay, how much of this do I *really* need to fill out?
+        Although only some of these fields are "required," please do your best to supply as much information as possible. What you don't give us, we need to hunt down ourselves or estimate.
+
+        If you can't (or don't want) to provide this information, consider whether filing a DB request will be helpful.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Basic Information
+        Please provide some basic information on the aircraft. 
+        
+        This is used to determine how the aircraft appears in-sim and in the DB viewer.
+
+  - type: checkboxes
+    id: hypo
+    attributes:
+      label: Hypothetical
+      description: Is this a hypothetical aircraft, i.e. one not yet or never placed in service?
+      options:
+        - label: "Yes"
+          required: false
+
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Provide designation and name (where applicable).
+      placeholder: ex. VF-1 Valkyrie
+    validations:
+      required: true
+
+  - type: input
+    id: operatorcountry
+    attributes:
+      label: Country
+      placeholder: ex. United Nations
+    validations:
+      required: false
+
+  - type: input
+    id: operatorservice
+    attributes:
+      label: Service
+      placeholder: ex. Space Force
+    validations:
+      required: false
+
+  - type: input
+    id: in-service
+    attributes:
+      label: In Commission
+      description: When was this aircraft in service for the specified country?
+      placeholder: ex. 2008-2013
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Dimensions and Weights
+        Please provide specifications for the aircraft.
+        
+        This is used to determine a number of critical factors in-sim.
+
+  - type: input
+    id: length
+    attributes:
+      label: Length (m)
+      placeholder: ex. 14.2
+    validations:
+      required: true
+
+  - type: input
+    id: wingspan
+    attributes:
+      label: Wingspan (m)
+      placeholder: ex. 14.8
+    validations:
+      required: true
+
+  - type: input
+    id: height
+    attributes:
+      label: Height (m)
+      placeholder: ex. 3.8
+    validations:
+      required: true
+
+  - type: input
+    id: empty
+    attributes:
+      label: Empty Weight (kg)
+      description: Interchangeable with normal. If only a single number is provided for displacement, assume it's standard.
+    validations:
+      required: true
+
+  - type: input
+    id: mtow
+    attributes:
+      label: Maximum Takeoff Weight (MTOW) (kg)
+    validations:
+      required: false
+
+  - type: input
+    id: payload
+    attributes:
+      label: Payload Weight (kg)
+    validations:
+      required: false
+
+  - type: input
+    id: crew
+    attributes:
+      label: Crew
+      placeholder: ex. 2
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Propulsion
+        Please provide some information on propulsion, speeds, etc. for the aircraft.
+
+  - type: input
+    id: propulsion
+    attributes:
+      label: Propulsion
+      description: Number and make of engines.
+      placeholder: ex. 2x P&W FF-2001
+    validations:
+      required: true
+
+  - type: input
+    id: rate-of-climb
+    attributes:
+      label: Rate of Climb (ft/min)
+      placeholder: ex. 800
+    validations:
+      required: true
+
+  - type: input
+    id: max-speed
+    attributes:
+      label: Military/Afterburner Speed (kt)
+    validations:
+      required: true
+
+  - type: input
+    id: cruise-speed
+    attributes:
+      label: Cruise Speed (kt)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: supercruise
+    attributes:
+      label: Supercruise
+      description: Is this aircraft capable of supercruise?
+      options:
+        - label: "Yes"
+          required: false
+
+  - type: input
+    id: range
+    attributes:
+      label: Ferry Range (nm)
+      placeholder: ex. 915
+      description: Aircraft range at cruise speed w/ ferry loadout.
+    validations:
+      required: true
+
+  - type: input
+    id: takeoff-land-dist
+    attributes:
+      label: Takeoff / Landing Distance (m)
+      placeholder: ex. 700 / 600
+    validations:
+      required: false
+
+  - type: input
+    id: endurance
+    attributes:
+      label: Endurance (min)
+      placeholder: ex. 600
+    validations:
+      required: false
+
+  - type: input
+    id: fuel
+    attributes:
+      label: Fuel Capacity (kg)
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Seeing & Shooting
+        Please list as many of the aircraft's sensors, mounts (i.e. weapons), and loadout options as you can.
+
+  - type: textarea
+    id: sensors
+    attributes:
+      label: Sensors
+      description: | 
+        List the aircraft's sensors, placing each mount on a new line as in the example. All of them, if you can -- not just the most important ones. If you don't know an exact model, record a generic and provide as much supplementary information as you can.
+      placeholder: |
+        1x AWG-20 FCR
+        1x APS-21 Surveillance Radar
+        2x Generic FLIR
+        1x Generic EO/IR Ball
+    validations:
+      required: true
+
+  - type: textarea
+    id: mounts
+    attributes:
+      label: Mounts
+      description: |
+        List the aircraft mounts (i.e., weapons), placing each mount on a new line as in the example. This will only include non-removable weapons, e.g. cannon; missiles, bombs, etc. should be listed as loadout options. 
+      placeholder: |
+        1x ROV-20 Laser Cannon
+        1x 55mm GU-11 Gun Pod (always installed)
+    validations:
+      required: true
+
+  - type: textarea
+    id: mounts
+    attributes:
+      label: Loadout Options
+      description: |
+        If specific loadouts are known, list them here. In addition / otherwise, please list the weapons that the aircraft can employ.
+      placeholder: |
+        - 12x AMM-1 Hybrid Guided Multipurpose Missiles
+        - 12x Mk82 LDGB
+        - 6x RMS-1 AShM
+        - 4x UUM-7 Micro-Missile Pods (14x HMM-01/pod)
+
+        Or combinations of the above.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Miscellanious Capabilities
+        Finally, please describe any other special capabilities the aircraft has.
+
+  - type: textarea
+    id: comms
+    attributes:
+      label: Comms/Datalinks
+      description: |
+        List any known comms systems or datalinks, placing each mount on a new line as in the example.
+      placeholder: |
+        UHF Radio [Secure]
+        VHF Radio [Secure]
+        UHF Datalink
+    validations:
+      required: false
+
+  - type: dropdown
+    id: codes
+    attributes:
+      label: Aircraft Codes
+      description: Indicate which (if any) of the following DB codes apply to this vessel.
+      multiple: true
+      options:
+        - Supermanouverability
+        - HIFR Capable
+        - Terrain Avoidance
+        - Terrain Following
+        - Fly-by-Wire
+        - Blip Enhance
+        - Night Navigation (Ferry, Air-to-Air, Air-to-Surface Missiles)
+        - Night Navigation/Attack (Incl. Bomb, Rocket Delivery)
+        - Bombsight - Basic
+        - Bombsight - Ballistic Computing
+        - Bombsight - Advanced Computing
+        - Bombsight - Advanced Navigation (INS/GPS)
+        - Helmet Mounted Sight / Display (HMS/HMD)
+        - Probe Refuelling
+        - Boom Refuelling
+        - Centerline Drogue
+        - Wing Drogue
+        - Centerline Boom
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Final Touches
+
+  - type: textarea
+    id: comments
+    attributes:
+      label: Comments
+      description: Anything else you think we need to know in order to effectively model this platform.
+    validations:
+      required: false
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: |
+        Please list all the sources you used to find the information you provided. If offline, provide title, author, and page.
+
+        We do check these where possible. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
+    validations:
+      required: true

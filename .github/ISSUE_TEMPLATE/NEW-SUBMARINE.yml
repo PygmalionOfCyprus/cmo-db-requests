@@ -87,7 +87,7 @@ body:
     id: length
     attributes:
       label: Length (m)
-      placeholder: ex. 118.5
+      placeholder: ex. 95
     validations:
       required: true
 
@@ -95,7 +95,7 @@ body:
     id: beam
     attributes:
       label: Beam (m)
-      placeholder: ex. 10.8
+      placeholder: ex. 8.3
     validations:
       required: true
 
@@ -103,7 +103,7 @@ body:
     id: draft
     attributes:
       label: Draft (m)
-      placeholder: ex. 3.76
+      placeholder: ex. 5.1
     validations:
       required: true
 
@@ -130,6 +130,13 @@ body:
       required: false
 
   - type: input
+    id: max-depth
+    attributes:
+      label: Max Depth (m)
+    validations:
+      required: true
+
+  - type: input
     id: crew
     attributes:
       label: Complement
@@ -141,9 +148,7 @@ body:
     attributes:
       value: |
         ## Propulsion
-        Please provide some information on propulsion, speed, etc. for the sub.
-        
-        This is used to determine...well, take a wild guess.
+        Please provide some information on propulsion, speeds, etc. for the sub.
 
   - type: dropdown
     id: propulsion-type
@@ -162,24 +167,24 @@ body:
     id: propulsion
     attributes:
       label: Propulsion
-      description: Number and type of primary engines. For diesel-electric subs, this will be the diesel engines.
+      description: Number, make, and type of primary engines. For diesel-electric subs, this will be the diesel engines.
       placeholder: ex. 4x Fairbanks-Morse Model 38D8 Diesels
     validations:
       required: true
 
   - type: input
-    id: fuel
-    attributes:
-      label: Fuel Capacity (kg)
-    validations:
-      required: false
-
-  - type: input
     id: max-speed
     attributes:
-      label: Flank Speed (kt)
+      label: Flank Speed at Surface (kt)
     validations:
       required: true
+
+  - type: input
+    id: max-speed-sub
+    attributes:
+      label: Flank Speed Submerged (kt)
+    validations:
+      required: false
 
   - type: input
     id: range
@@ -190,11 +195,27 @@ body:
     validations:
       required: true
 
+  - type: input
+    id: aip-range
+    attributes:
+      label: Range (nm) on AIP
+      description: If the sub is capable of AIP, how far is its range when using this method of propulsion?
+      placeholder: ex. 850
+    validations:
+      required: false
+
+  - type: input
+    id: fuel
+    attributes:
+      label: Fuel Capacity (kg)
+    validations:
+      required: false
+
   - type: markdown
     attributes:
       value: |
         ## Seeing & Shooting
-        This is where the fun begins. Please list as many of the sub's sensors and mounts (i.e. weapons) as you can.
+        Please list as many of the sub's sensors and mounts (i.e. weapons) as you can.
 
   - type: textarea
     id: sensors
@@ -205,9 +226,9 @@ body:
 
         Please place each mount on a new line as in the example.
       placeholder: |
-        2x Generic Navigation Radar (Furuno)
-        1x TRS-3D
-        2x STIR 1.2 Mk2
+        1x OMS 100 / SERO 400 Periscope Suite
+        1x Type 1007 Radar
+        1x DBQS-40 Sonar
     validations:
       required: true
 
@@ -220,9 +241,19 @@ body:
 
         Please place each mount on a new line as in the example.
       placeholder: |
-        1x 76mm/62 OTO Melara Super Rapido
-        2x 30mm Typhoon RWS
-        2x MM.40 Quad Launchers
+        6x 533mm TT (BSA Torpedoes)
+        2x TAU-2000 DL
+    validations:
+      required: true
+
+  - type: textarea
+    id: mounts
+    attributes:
+      label: Magazines
+      description: |
+        Describe the sub's available reloads, if known and applicable.
+      placeholder: |
+        6x BSA Torpedoes
     validations:
       required: true
 
@@ -233,27 +264,13 @@ body:
         Finally, please describe any other special capabilities the sub has.
 
   - type: textarea
-    id: facilities
-    attributes:
-      label: Aircraft & Docking Facilities
-      description: |
-        List any docking and/or aircraft facilities.
-
-        Please place each mount on a new line as in the example.
-      placeholder: |
-        2x Davits for 7m RHIB
-        1x Pad/Hangar for Medium Helicopter
-    validations:
-      required: false
-
-  - type: textarea
     id: comms
     attributes:
       label: Comms/Datalinks
       description: |
         List any known comms systems or datalinks, placing each mount on a new line as in the example.
       placeholder: |
-        VHF/UHF Radio
+        VHF/UHF Radio [Secure]
         SATCOM
         Link 11
         Link 14
@@ -268,23 +285,17 @@ body:
       description: Indicate which (if any) of the following DB codes apply to this vessel.
       multiple: true
       options:
-        - Nuclear Shock Resistant
-        - Degaussed Steel Hull
-        - Onboard Degaussing Gear (Magnetometer)
-        - Prairie Masker
-        - Advanced Quieting
-        - Passive or Single Stabilizers
-        - Dual or Triple Stabilizers
-        - Hovercraft/SES
-        - Catamaran/Trimaran Multihull
-        - Wooden Hull Construction
-        - Glass Reinforced Polyester (GRP) Construction
-        - All Aluminum Construction
-        - Aluminum Superstructure Only
-        - Built to Mercantile Standards
+        - Shock Resistant
+        - Nonmagnetic Hull
+        - Titanium Hull
+        - Double Hull
+        - Shrouded Propulsor
+        - Advanced Propulsor
+        - Lithium-Ion Batteries
+        - Snorkel
+        - No Launch Transient
         - Low Construction Standards
         - Laid Down Before 1930
-        - Helo In-Flight Refuel (HIFR) Capable
 
   - type: markdown
     attributes:

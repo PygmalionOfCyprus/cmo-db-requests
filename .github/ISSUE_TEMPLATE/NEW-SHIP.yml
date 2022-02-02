@@ -1,7 +1,7 @@
 name: New Ship Request
 description: This form is used to request a new ship/boat/watercraft.
-title: "New Ship: "
-# labels: ["bug", "triage"]
+# title: "New Ship: "
+labels: ["addition", "ship"]
 # assignees:
 #   - octocat
 
@@ -185,7 +185,7 @@ body:
     id: propulsion
     attributes:
       label: Propulsion
-      description: Number and type of engines. For CODAG, etc. you can specify here.
+      description: Number, make, and type of engines. For CODAG, etc. you can specify here.
       placeholder: ex. 2x MAN 12V28/33D Diesels, 1x MT-30 Gas Turbine, CODAG
     validations:
       required: true
@@ -329,6 +329,6 @@ body:
       description: |
         Please list all the sources you used to find the information you provided. If offline, provide title, author, and page.
 
-        We do check these where possible. If we can't corroborate your information, we may provide replacements from our own sources or discard your request entirely.
+        We do check these where possible. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
     validations:
       required: true
