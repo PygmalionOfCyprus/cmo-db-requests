@@ -9,25 +9,22 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to submit a new weapon request!
+        Thank you for taking the time to request a new weapon!
 
         ### A Note on Requesting Subcomponents
         Subcomponents -- such as weapons and sensors -- are of little use without a host. While it is true that weapon records / sensors may be added to various platforms in the mission editor, a weapon/sensor that is not currently employed on any platform in the DB is rarely worth the time it takes to add.
 
-        If the weapon/sensor *is* employed on another platform, it may be worth simply filing an update or loadout request instead. If we need you to file a separate subcomponent request, we'll let you know!
+        If the weapon/sensor *is* employed on another platform, it may be worth simply filing an addition, update, or loadout request instead. If we need you to file a separate subcomponent request, we'll let you know!
 
   - type: markdown
     attributes:
       value: |
         ## Basic Information
-        Please provide some basic information on the aircraft. 
-        
-        This is used to determine how the aircraft appears in-sim and in the DB viewer.
 
   - type: checkboxes
     attributes:
       label: Hypothetical
-      description: Is this a hypothetical aircraft, i.e. one not yet or never placed in service?
+      description: Is this a hypothetical weapon, i.e. one not yet or never placed in service?
       options:
         - label: "Yes"
           required: false
@@ -36,205 +33,130 @@ body:
     attributes:
       label: Name
       description: Provide designation and name (where applicable).
-      placeholder: ex. VF-1 Valkyrie
+      placeholder: ex. MM.38 Exocet Blk 1
     validations:
       required: true
-
-  - type: input
-    attributes:
-      label: Country
-      placeholder: ex. United Nations
-    validations:
-      required: false
-
-  - type: input
-    attributes:
-      label: Service
-      placeholder: ex. Space Force
-    validations:
-      required: false
-
-  - type: input
-    attributes:
-      label: In Commission
-      description: When was this aircraft in service for the specified country?
-      placeholder: ex. 2008-2013
-    validations:
-      required: false
 
   - type: markdown
     attributes:
       value: |
         ## Dimensions and Weights
-        Please provide specifications for the aircraft.
-        
-        This is used to determine a number of critical factors in-sim.
 
   - type: input
     attributes:
       label: Length (m)
-      placeholder: ex. 14.2
+      placeholder: ex. 4.70
     validations:
       required: true
 
   - type: input
     attributes:
-      label: Wingspan (m)
-      placeholder: ex. 14.8
+      label: Width/Span (m)
+      placeholder: ex. 1.10
     validations:
       required: true
 
   - type: input
     attributes:
-      label: Height (m)
-      placeholder: ex. 3.8
+      label: Diameter (m)
+      placeholder: ex. 0.35
     validations:
       required: true
 
   - type: input
     attributes:
-      label: Empty Weight (kg)
-      description: Interchangeable with normal. If only a single number is provided for displacement, assume it's standard.
-    validations:
-      required: true
-
-  - type: input
-    attributes:
-      label: Maximum Takeoff Weight (MTOW) (kg)
-    validations:
-      required: false
-
-  - type: input
-    attributes:
-      label: Payload Weight (kg)
-    validations:
-      required: false
-
-  - type: input
-    attributes:
-      label: Crew
-      placeholder: ex. 2
+      label: Weight (kg)
+      placeholder: ex. 670
     validations:
       required: true
 
   - type: markdown
     attributes:
       value: |
-        ## Propulsion
-        Please provide some information on propulsion, speeds, etc. for the aircraft.
+        ## Engagement Characteristics
 
   - type: input
     attributes:
-      label: Propulsion
-      description: Number and make of engines.
-      placeholder: ex. 2x P&W FF-2001
+      label: Range (nm)
+      placeholder: ex. 2.0-23.0
     validations:
       required: true
 
   - type: input
     attributes:
-      label: Rate of Climb (ft/min)
-      placeholder: ex. 800
+      label: Launch Altitude / Depth (ft)
+      description: How deep/high must/can a shooter be when employing this weapon? Specify AGL or ASL.
+      placeholder: ex. 200ft AGL - 35000ft ASL
     validations:
-      required: true
+      required: false
 
   - type: input
     attributes:
-      label: Service Ceiling (ft)
-      placeholder: ex. 36000
+      label: Target Altitude / Depth (ft)
+      description: How deep/high can the target be in order to be successfully engaged by this weapon? Specify AGL or ASL.
+      placeholder: ex. 200ft AGL - 35000ft ASL
     validations:
-      required: true
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## The Pointy End
 
   - type: input
     attributes:
-      label: Military/Afterburner Speed (kt)
+      label: Warhead
+      description: What is the warhead weight and type?
+      placeholder: ex. 165kg HE Blast/Frag
     validations:
       required: true
 
-  - type: input
+  - type: dropdown
     attributes:
-      label: Cruise Speed (kt)
-    validations:
-      required: true
-
-  - type: checkboxes
-    attributes:
-      label: Supercruise
-      description: Is this aircraft capable of supercruise?
+      label: Targets
+      description: Indicate which of the following are valid targets for this weapon.
+      multiple: true
       options:
-        - label: "Yes"
-          required: false
+        - Aircraft
+        - Helicopter
+        - Missile
+        - Satellite
+        - C-RAM (Counter Rocket, Artillery and Mortar)
+        - Surface Vessel
+        - Submarine
+        - Mine
+        - Torpedo
+        - Land Structure - Soft
+        - Land Structure - Hardened
+        - Runway
+        - Radar
+        - Mobile Target - Soft
+        - Mobile Target - Hardened
+        - Mobile Target - Personnel
 
   - type: input
     attributes:
-      label: Ferry Range (nm)
-      placeholder: ex. 915
-      description: Aircraft range at cruise speed w/ ferry loadout.
-    validations:
-      required: true
-
-  - type: input
-    attributes:
-      label: Takeoff / Landing Distance (m)
-      placeholder: ex. 700 / 600
-    validations:
-      required: false
-
-  - type: input
-    attributes:
-      label: Endurance (min)
-      placeholder: ex. 600
-    validations:
-      required: false
-
-  - type: input
-    attributes:
-      label: Fuel Capacity (kg)
+      label: CEP (m)
+      description: What is the Circular Error Probable for the weapon against targets on land/surface?
+      placeholder: ex. 4
     validations:
       required: false
 
   - type: markdown
     attributes:
       value: |
-        ## Sensing & Shooting
-        Please list as many of the aircraft's sensors, mounts (i.e. weapons), and loadout options as you can.
+        ## Sensors
 
   - type: textarea
     attributes:
       label: Sensors
       description: | 
-        List the aircraft's sensors, placing each mount on a new line as in the example. All of them, if you can -- not just the most important ones. If you don't know an exact model, record a generic and provide as much supplementary information as you can.
-      placeholder: |
-        1x AWG-20 FCR
-        1x APS-21 Surveillance Radar
-        2x Generic FLIR
-        1x Generic EO/IR Ball
-    validations:
-      required: true
+        List the weapon's sensors, placing each on a new line as in the example. Most weapons will have one or two, generally a primary seeker (Active Radar, Sonar, etc.) and sometimes a secondary (Passive Radar, TV, etc.).
 
-  - type: textarea
-    attributes:
-      label: Mounts
-      description: |
-        List the aircraft mounts (i.e., weapons), placing each mount on a new line as in the example. This will only include non-removable weapons, e.g. cannon; missiles, bombs, etc. should be listed as loadout options. 
+        If you have specific information about the seeker's capabilities, you can include it here.
       placeholder: |
-        1x ROV-20 Laser Cannon
-        1x 55mm GU-11 Gun Pod (always installed)
-    validations:
-      required: true
-
-  - type: textarea
-    attributes:
-      label: Loadout Options
-      description: |
-        If specific loadouts are known, list them here. In addition / otherwise, please list the weapons that the aircraft can employ.
-      placeholder: |
-        - 12x AMM-1 Hybrid Guided Multipurpose Missiles
-        - 12x Mk82 LDGB
-        - 6x RMS-1 AShM
-        - 4x UUM-7 Micro-Missile Pods (14x HMM-01/pod)
-
-        Or combinations of the above.
+        1x Active Radar Seeker (~5nm Range)
+        1x IIR Seeker (2nd Gen)
     validations:
       required: true
 
@@ -242,44 +164,70 @@ body:
     attributes:
       value: |
         ## Miscellanious Capabilities
-        Finally, please describe any other special capabilities the aircraft has.
-
-  - type: textarea
-    attributes:
-      label: Comms/Datalinks
-      description: |
-        List any known comms systems or datalinks, placing each mount on a new line as in the example.
-      placeholder: |
-        UHF Radio [Secure]
-        VHF Radio [Secure]
-        UHF Datalink
-    validations:
-      required: false
 
   - type: dropdown
     attributes:
-      label: Aircraft Codes
-      description: Indicate which (if any) of the following DB codes apply to this vessel.
+      label: Weapon Codes
+      description: Indicate which (if any) of the following DB codes apply to this weapon.
       multiple: true
       options:
-        - Supermanouverability
-        - HIFR Capable
-        - Terrain Avoidance
+        - Illuminate at Launch
+        - Terminal Illumination
+        - Supports Buddy Illumination
+        - Home On Jam (HOJ)
+        - Anti-Air Stern Chase
+        - Anti-Air Rear-Aspect
+        - Anti-Air All-Aspect
+        - Anti-Air Dogfight (High Off-Boresight)
+        - No Diving Target
+        - Capable vs Seaskimmer
+        - ARH AAW - No HQ Track Required
+        - C-RAM Capable
+        - Lock-On After Launch (LOAL) - CEC-Capable
+        - Lock-On After Launch (LOAL)
         - Terrain Following
-        - Fly-by-Wire
-        - Blip Enhance
-        - Night Navigation (Ferry, Air-to-Air, Air-to-Surface Missiles)
-        - Night Navigation/Attack (Incl. Bomb, Rocket Delivery)
-        - Bombsight - Basic
-        - Bombsight - Ballistic Computing
-        - Bombsight - Advanced Computing
-        - Bombsight - Advanced Navigation (INS/GPS)
-        - Helmet Mounted Sight / Display (HMS/HMD)
-        - Probe Refuelling
-        - Boom Refuelling
-        - Centerline Drogue
-        - Wing Drogue
-        - Centerline Boom
+        - Launcher Occupied During Guidance
+        - ARM Target Memory
+        - Loiter Capability
+        - Loiter Capability (Parachute)
+        - Search Pattern
+        - Drive-Through Logic
+        - Bearing-Only Launch (BOL)
+        - Ballistic Missile or Rocket Booster
+        - Weapon - INS Navigation
+        - Weapon - INS w/ GNSS Navigation
+        - Weapon - TERCOM Navigation
+        - Weapon - Pre-Briefed Target Only
+        - Weapon - Can Target Specific Subsystems
+        - Terminal Maneuver - Pop-up
+        - Terminal Maneuver - Zig-Zag
+        - Terminal Maneuver - Random (Advanced)
+        - Re-Attack Capability
+        - Weapon Altitude Control Possible
+        - Attitude Control - Aerodynamic Only
+        - Attitude Control - Non-Aerodynamic Only
+        - Attitude Control - Combined
+        - Uses GPS
+        - Uses GLONASS
+        - Uses BeiDou/COMPASS
+        - Uses NavIC/IRNSS
+        - Mine - Contact Fuze
+        - Mine - Magnetic Fuze, Simple Magnetic
+        - Mine - Magnetic Fuze, Total-Field Magnetometer
+        - Mine - Passive Acoustic Fuze, Broad-Band (Simple)
+        - Mine - Passive Acoustic Fuze, Narrow-Band (Advanced)
+        - Mine - Pressure Fuze
+        - Mine - Seismic Fuze
+        - Mine - Delay Counter
+        - Mine - Arming Delay
+        - Mine - Target Discrimination / Identification
+        - Mine - Remote Controlled
+        - Is Retarded Munition
+        - Torpedo - Straight-Running
+        - Torpedo - Wake Homing (WH)
+        - Torpedo - Straight-Running & Time Detonation
+        - Torpedo - Pattern-Running
+        - Level Cruise Flight
 
   - type: markdown
     attributes:
@@ -289,7 +237,7 @@ body:
   - type: textarea
     attributes:
       label: Comments
-      description: Anything else you think we need to know in order to effectively model this platform.
+      description: Anything else you think we need to know in order to effectively model this weapon.
     validations:
       required: false
 

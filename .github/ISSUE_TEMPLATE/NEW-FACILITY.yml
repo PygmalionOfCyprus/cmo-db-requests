@@ -9,7 +9,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to submit a new facility request!
+        Thank you for taking the time to request a new facility!
 
         ### Facility or Ground Unit?
         As a rule of thumb, if the system is defined by the effect it has *on other domains*, it's probably best modelled as a facility. A SAM system, for example, is meant to engage targets in the air; a coastal defense missile battery is intended to engage targets at sea; this despite both technically being land-based platforms.

@@ -9,7 +9,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to submit a new satellite request!
+        Thank you for taking the time to request a new satellite!
 
         Although only some of these fields are "required," please do your best to supply as much information as possible. What you don't give us, we need to hunt down ourselves or estimate.
 

@@ -9,7 +9,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to submit a new ship request!
+        Thank you for taking the time to request a new ship!
 
         ### On Class Requests
         If you're requesting an entire class of ship rather than a specific vessel, please fill out the form as if for the class nameship. For example, if requesting the Arleigh Burke-class, fill out the form as if for DDG-51.

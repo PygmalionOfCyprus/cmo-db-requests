@@ -1,0 +1,313 @@
+name: New Radar/Sonar Request
+description: This form is used to request new radar/sonar.
+# title: "New Sensor: "
+labels: ["addition", "sensor"]
+# assignees:
+#   - octocat
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to request a new sensor!
+
+        ### A Note on Requesting Subcomponents
+        Subcomponents -- such as weapons and sensors -- are of little use without a host. While it is true that weapon records / sensors may be added to various platforms in the mission editor, a weapon/sensor that is not currently employed on any platform in the DB is rarely worth the time it takes to add.
+
+        If the weapon/sensor *is* employed on another platform, it may be worth simply filing an addition, update, or loadout request instead. If we need you to file a separate subcomponent request, we'll let you know!
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Common Information
+
+  - type: checkboxes
+    attributes:
+      label: Hypothetical
+      description: Is this a hypothetical sensor, i.e. one not yet or never placed in service?
+      options:
+        - label: "Yes"
+          required: false
+
+  - type: input
+    attributes:
+      label: Name
+      description: Provide designation and name (where applicable).
+      placeholder: ex. SBS-800-1 SharpEye
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Sensor Generation
+      description: Generally, a sensor is assigned a Generation based on the R&D phase rather than the deployment phase, so a sensor that was deployed in 2022 after being developed from 2018-2022 would have a Late 2010’s Generation.
+      multiple: false
+      options:
+        - Early 1950s
+        - Late 1950s
+        - Early 1960s
+        - Late 1960s
+        - Early 1970s
+        - Late 1970s
+        - Early 1980s
+        - Late 1980s
+        - Early 1990s
+        - Late 1990s
+        - Early 2000s
+        - Late 2000s
+        - Early 2010s
+        - Late 2010s
+        - Early 2020s
+        - Late 2020s
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Sensor Capabilities
+      multiple: true
+      options:
+        - Air Search
+        - Surface Search
+        - Submarine Search
+        - Land Search - Fixed Facility
+        - Land Search - Mobile Unit
+        - Periscope Search
+        - C-RAM (Counter-Rocket, Artillery and Mortar)
+        - Space Search - ABM
+        - Mine & Obstacle Search
+        - Torpedo Warning
+        - Range Information
+        - Altitude Information
+        - Speed Information
+        - Heading Information
+        - Navigation Only
+        - Ground Mapping Only
+        - Terrain Avoidance / Following Only
+        - Weather Only
+        - Weather and Navigation Only
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Search/Track Frequencies
+      multiple: true
+      options:
+        - A Band (30-250 MHz) [Old P Band (HF)] 100-300 cm
+        - B Band (250-500 MHz) [Old P Band (VHF)] 60-100 cm
+        - C Band (500-1000 MHz) [Old L Band (UHF)] 60-30cm
+        - D Band (1-2 GHz) [Old L Band] 15-30 cm
+        - E Band (2-3 GHz) [Old S Band] 10-15 cm
+        - F Band (3-4 GHz) [Old S Band] 7.5-10 cm
+        - G Band (4-6 GHz) [Old C Band] 5-7.5 cm
+        - H Band (6-8 GHz) [Old C Band] 3.75-5 cm
+        - I Band (8-10 GHz) [Old X Band] 3-3.75 cm
+        - J Band (10-20 GHz) [Old X Band] 1.5-3 cm
+        - K Band (20-40 GHz) [Old Ku Band] 0.75-1.5 cm
+        - L Band (40-60 GHz) [Old Ka Band] 5-7.5 mm
+        - M Band (60-100 GHz) [Old V/W Band] 3-5 mm
+        - LF Sonar (1-5 KHz, 3 KHz Center Frequency)
+        - MF Sonar (5-10 KHz, 7.5 KHz Center Frequency)
+        - HF Sonar (10-500 KHz, 20 KHz Center Frequency)
+        - VLF Sonar (0-1000 Hz, 200 Hz Center Frequency)
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Lower Frequency (Hz)
+      description: If you know the specific frequency range, provide the precise lower frequency.
+      placeholder: ex. 9,210,000,000
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Upper Frequency (Hz)
+      description: If you know the specific frequency range, provide the precise upper frequency.
+      placeholder: ex. 9,490,000,000
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Radar Stats
+
+        If requesting a radar, fill out as much of the following information as you can.
+
+  - type: input
+    attributes:
+      label: Scan Interval (s)
+      description: How often does the radar scan a section of sky? On rotating radars this will be 60/RPM.
+      placeholder: ex. 3
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Target Altitude (ft)
+      description: How high/low can a target be and still be successfully detected by this radar? Specify AGL or ASL.
+      placeholder: ex. 200ft AGL - 36000ft ASL
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Horizontal Beamwidth (deg)
+      placeholder: ex. 0.70
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Vertical Beamwidth (deg)
+      placeholder: ex. 25.00
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: System Noise Level (dB)
+      placeholder: ex. 3.5
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Processing Gain/Loss (dB)
+      placeholder: ex. 32.5
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Peak Power (W)
+      placeholder: ex. 300
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Pulse Width (ms)
+      placeholder: ex. 1.00
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Blind Time (ms)
+      placeholder: ex. 1.00
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: PRF (Hz)
+      placeholder: ex. 1700
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Sonar Stats
+
+        If requesting a sonar, fill out as much of the following information as you can.
+
+  - type: input
+    attributes:
+      label: Source Level (dB)
+      placeholder: ex. 150
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Pulse Length (ms)
+      placeholder: ex. 60
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: TASS/VDS Length (m)
+      description: If the sonar is a TASS/VDS, how long is the cable?
+      placeholder: ex. 200
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: TASS/VDS Depth (m)
+      description: If the sonar is a TASS/VDS, how deep/shallow can it be trailed?
+      placeholder: ex. 20m - 300m
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Convergence Zones
+      description: If known, how many convergence zones does the sonar create?
+      placeholder: ex. 60
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Miscellanious Capabilities
+
+  - type: dropdown
+    attributes:
+      label: Sensor Codes
+      description: Indicate which (if any) of the following capability codes apply to this sensor.
+      multiple: true
+      options:
+        - Identification Friend or Foe (IFF) [Side Info]
+        - Classification [Class Info] / Brilliant Weapon [Automatic Target Acquisition]
+        - Non-Cooperative Target Recognition (NCTR) - Jet Engine Modulation [Class Info]
+        - Non-Cooperative Target Recognition (NCTR) - Narrow Beam Interleaved Search and Track [Class Info]
+        - Continuous Tracking Capability
+        - Track While Scan (TWS)
+        - Periscope Search - Basic Capability
+        - Periscope/Surface Search - Fine Range Resolution + Rapid Scan [1980+]
+        - Periscope/Surface Search - Advanced Processing [2000+]
+        - Moving Target Indicator (MTI)
+        - Low Probability of Intercept (LPI)
+        - Pulse-Only Radar
+        - Pulse Doppler Radar (Full LDSD Capability)
+        - Pulse Doppler Radar (Limited LDSD Capability)
+        - Passive Electronically Scanned Array (PESA)
+        - Active Electronically Scanned Array (AESA)
+        - Can Classify Ground Targets (SAR)
+        - Continuous Wave Illumination
+        - Interrupted Continuous Wave Illumination
+        - Frequency Agile
+        - Cognitive EW
+        - Generates AAW Fire-Control Data
+        - Shallow Water Capable (Partial)
+        - Shallow Water Capable (Full) [Classification Flag Required]
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Final Touches
+
+  - type: textarea
+    attributes:
+      label: Comments
+      description: Anything else you think we need to know in order to effectively model this sensor.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Sources
+      description: |
+        Please list all the sources you used to find the information you provided. If offline, provide title, author, and page.
+
+        We do check these where possible. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
+    validations:
+      required: true
