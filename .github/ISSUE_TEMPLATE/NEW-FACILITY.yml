@@ -30,7 +30,6 @@ body:
         This is used to determine how it will appear in-sim and in the DB viewer.
 
   - type: checkboxes
-    id: hypo
     attributes:
       label: Hypothetical
       description: Is this a hypothetical facility, i.e. one not yet or never placed in service?
@@ -39,7 +38,6 @@ body:
           required: false
 
   - type: input
-    id: name
     attributes:
       label: Name
       description: Provide a name for the facility.
@@ -48,7 +46,6 @@ body:
       required: true
 
   - type: dropdown
-    id: type
     attributes:
       label: Facility Type
       description: Choose the type descriptor that best describes this facility. In most cases this will match the name.
@@ -68,7 +65,6 @@ body:
         - Supply
 
   - type: input
-    id: operatorcountry
     attributes:
       label: Country
       placeholder: ex. United States
@@ -76,7 +72,6 @@ body:
       required: false
 
   - type: input
-    id: operatorservice
     attributes:
       label: Service
       placeholder: ex. Army
@@ -84,7 +79,6 @@ body:
       required: false
 
   - type: input
-    id: in-service
     attributes:
       label: In Commission
       description: When was the facility in-service with the aforementioned country and service?
@@ -95,11 +89,10 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Seeing & Shooting
+        ## Sensing & Shooting
         Please list the facility's primary sensors and mounts where applicable.
 
   - type: textarea
-    id: sensors
     attributes:
       label: Sensors
       description: |
@@ -111,7 +104,6 @@ body:
       required: true
 
   - type: textarea
-    id: mounts
     attributes:
       label: Mounts
       description: |
@@ -122,7 +114,6 @@ body:
       required: true
 
   - type: textarea
-    id: mounts
     attributes:
       label: Magazines
       description: |
@@ -138,7 +129,6 @@ body:
         ## Miscellanious Specifications
 
   - type: input
-    id: crew
     attributes:
       label: Crew
       placeholder: ex. 40
@@ -146,7 +136,6 @@ body:
       required: false
 
   - type: input
-    id: disp-rad
     attributes:
       label: Dispersion Radius (m)
       description: How far apart are the individual "mounts" usually positioned? For example, in a SAM site, how far apart are the TELs?
@@ -155,7 +144,6 @@ body:
       required: false      
 
   - type: textarea
-    id: facilities
     attributes:
       label: Aircraft & Docking Facilities
       description: List any docking and/or aircraft facilities, placing each on a new line.
@@ -170,7 +158,6 @@ body:
         ## Final Touches
 
   - type: textarea
-    id: comments
     attributes:
       label: Comments
       description: Anything else you think we need to know in order to effectively model this platform.
@@ -178,7 +165,6 @@ body:
       required: false
 
   - type: textarea
-    id: sources
     attributes:
       label: Sources
       description: |

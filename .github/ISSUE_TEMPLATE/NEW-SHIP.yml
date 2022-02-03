@@ -33,7 +33,6 @@ body:
         This is used to determine how the ship appears in-sim and in the DB viewer.
 
   - type: checkboxes
-    id: hypo
     attributes:
       label: Hypothetical
       description: Is this a hypothetical vessel, i.e. one not yet or never placed in service?
@@ -42,7 +41,6 @@ body:
           required: false
 
   - type: input
-    id: name
     attributes:
       label: Name
       description: Provide classification, pennant number, and name (where applicable).
@@ -51,7 +49,6 @@ body:
       required: true
 
   - type: input
-    id: class
     attributes:
       label: Class
       placeholder: ex. Kagerou-class
@@ -59,7 +56,6 @@ body:
       required: false
 
   - type: input
-    id: operatorcountry
     attributes:
       label: Country
       placeholder: ex. Japan
@@ -67,7 +63,6 @@ body:
       required: false
 
   - type: input
-    id: operatorservice
     attributes:
       label: Service
       placeholder: ex. Navy
@@ -75,7 +70,6 @@ body:
       required: false
 
   - type: input
-    id: in-service
     attributes:
       label: In Commission
       description: |
@@ -95,7 +89,6 @@ body:
         This is used to determine a number of critical factors in-sim, including "damage points" (DP), signature, etc.
 
   - type: input
-    id: length
     attributes:
       label: Length (m)
       placeholder: ex. 118.5
@@ -103,7 +96,6 @@ body:
       required: true
 
   - type: input
-    id: beam
     attributes:
       label: Beam (m)
       placeholder: ex. 10.8
@@ -111,7 +103,6 @@ body:
       required: true
 
   - type: input
-    id: draft
     attributes:
       label: Draft (m)
       placeholder: ex. 3.76
@@ -119,7 +110,6 @@ body:
       required: true
 
   - type: input
-    id: std-displacement
     attributes:
       label: Standard Displacement (t)
       description: Interchangeable with normal. If only a single number is provided for displacement, assume it's standard.
@@ -127,21 +117,18 @@ body:
       required: true
 
   - type: input
-    id: full-displacement
     attributes:
       label: Full Displacement (t)
     validations:
       required: false
 
   - type: input
-    id: empty-displacement
     attributes:
       label: Empty Displacement (t)
     validations:
       required: false
 
   - type: input
-    id: crew
     attributes:
       label: Complement
       placeholder: ex. 31
@@ -149,7 +136,6 @@ body:
       required: true
 
   - type: input
-    id: sea-state
     attributes:
       label: Max Sea State
       description: What is the highest Sea State in which this ship can effectively operate?
@@ -166,7 +152,6 @@ body:
         This is used to determine...well, take a wild guess.
 
   - type: dropdown
-    id: propulsion-type
     attributes:
       label: Primary Propulsion Type
       description: For CODAG, etc. select "Diesel".
@@ -182,7 +167,6 @@ body:
       required: true
 
   - type: input
-    id: propulsion
     attributes:
       label: Propulsion
       description: Number, make, and type of engines. For CODAG, etc. you can specify here.
@@ -191,21 +175,18 @@ body:
       required: true
 
   - type: input
-    id: fuel
     attributes:
       label: Fuel Capacity (kg)
     validations:
       required: false
 
   - type: input
-    id: max-speed
     attributes:
       label: Flank Speed (kt)
     validations:
       required: true
 
   - type: input
-    id: range
     attributes:
       label: Range (nm) at Speed (kt)
       description: This will usually be at the ship's cruise speed.
@@ -216,11 +197,10 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Seeing & Shooting
+        ## Sensing & Shooting
         This is where the fun begins. Please list as many of the ship's sensors and mounts (i.e. weapons) as you can.
 
   - type: textarea
-    id: sensors
     attributes:
       label: Sensors
       description: | 
@@ -235,7 +215,6 @@ body:
       required: true
 
   - type: textarea
-    id: mounts
     attributes:
       label: Mounts
       description: |
@@ -256,7 +235,6 @@ body:
         Finally, please describe any other special capabilities the ship has.
 
   - type: textarea
-    id: facilities
     attributes:
       label: Aircraft & Docking Facilities
       description: |
@@ -270,7 +248,6 @@ body:
       required: false
 
   - type: textarea
-    id: comms
     attributes:
       label: Comms/Datalinks
       description: |
@@ -285,7 +262,6 @@ body:
       required: false
 
   - type: dropdown
-    id: codes
     attributes:
       label: Ship Codes
       description: Indicate which (if any) of the following DB codes apply to this vessel.
@@ -315,7 +291,6 @@ body:
         ## Final Touches
 
   - type: textarea
-    id: comments
     attributes:
       label: Comments
       description: Anything else you think we need to know in order to effectively model this platform.
@@ -323,7 +298,6 @@ body:
       required: false
 
   - type: textarea
-    id: sources
     attributes:
       label: Sources
       description: |

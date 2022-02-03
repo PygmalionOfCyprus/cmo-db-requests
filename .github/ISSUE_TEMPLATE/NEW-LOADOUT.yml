@@ -1,0 +1,107 @@
+name: New Loadout(s) Request
+description: This form is used to request new loadouts for one or multiple aircraft.
+# title: "New Loadout: "
+labels: ["update", "aircraft"]
+# assignees:
+#   - octocat
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to submit a new loadout request!
+
+        Although only some of these fields are "required," please do your best to supply as much information as possible. What you don't give us, we need to hunt down ourselves or estimate.
+
+        If you can't (or don't want) to provide this information, consider whether filing a DB request will be helpful.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Loadout Information
+
+  - type: input
+    attributes:
+      label: User(s)
+      description: Which aircraft use this/these loadout(s)? If for a specific aircraft, please provide DBIDs; otherwise, a simple descriptor will suffice.
+      placeholder: ex. USN F/A-18Cs, 2012-
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Weapons Carried
+      description: |
+        What weapons are carried? Include fuel tanks, sensor pods, etc. If requesting multiple loadouts, put a line between each so we can tell them apart.
+      placeholder: |
+        - 1x 12.7mm HMP 400 Gun Pod
+        - 2x HYDRA APKWS II 70mm Rocket
+        - 2x GBU-59/B Paveway II GPS/LGB
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: Requires Buddy Illumination
+      description: Does this loadout require buddy illumination, i.e. is it carrying laser-guided weapons that the aircraft cannot direct organically?
+      options:
+        - label: "Yes"
+          required: false
+
+  - type: input
+    attributes:
+      label: Default Combat Radius (nm)
+      description: How far was the aircraft capable of flying with this loadout under normal conditions?
+      placeholder: ex. 3600
+    validations:
+      required: false
+
+  - type: dropdown
+    attributes:
+      label: Weather Restrictions
+      multiple: true
+      default: 
+      options:
+        - All-Weather
+        - Limited All-Weather
+        - Clear Weather
+
+  - type: dropdown
+    attributes:
+      label: Time-of-Day Restrictions
+      multiple: true
+      default: 
+      options:
+        - Day & Night
+        - Day-Only
+        - Night-Only
+
+  - type: checkboxes
+    attributes:
+      label: Capable of Quick Turnaround
+      description: Can aircraft with this loadout be quickly reloaded and relaunched?
+      options:
+        - label: "Yes"
+          required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Final Touches
+
+  - type: textarea
+    attributes:
+      label: Comments
+      description: Anything else you think we need to know in order to effectively model this loadout.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Sources
+      description: |
+        Please list all the sources you used to find the information you provided. If offline, provide title, author, and page.
+
+        We do check these where possible. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
+    validations:
+      required: true

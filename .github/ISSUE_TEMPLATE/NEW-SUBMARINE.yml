@@ -30,7 +30,6 @@ body:
         This is used to determine how the sub appears in-sim and in the DB viewer.
 
   - type: checkboxes
-    id: hypo
     attributes:
       label: Hypothetical
       description: Is this a hypothetical vessel, i.e. one not yet or never placed in service?
@@ -39,7 +38,6 @@ body:
           required: false
 
   - type: input
-    id: name
     attributes:
       label: Name
       description: Provide classification, pennant number, and name (where applicable).
@@ -48,7 +46,6 @@ body:
       required: true
 
   - type: input
-    id: class
     attributes:
       label: Class
       placeholder: ex. Balao-class
@@ -56,7 +53,6 @@ body:
       required: false
 
   - type: input
-    id: operatorcountry
     attributes:
       label: Country
       placeholder: ex. United States
@@ -64,7 +60,6 @@ body:
       required: false
 
   - type: input
-    id: in-service
     attributes:
       label: In Commission
       description: |
@@ -84,7 +79,6 @@ body:
         This is used to determine a number of critical factors in-sim, including "damage points" (DP), signature, etc.
 
   - type: input
-    id: length
     attributes:
       label: Length (m)
       placeholder: ex. 95
@@ -92,7 +86,6 @@ body:
       required: true
 
   - type: input
-    id: beam
     attributes:
       label: Beam (m)
       placeholder: ex. 8.3
@@ -100,7 +93,6 @@ body:
       required: true
 
   - type: input
-    id: draft
     attributes:
       label: Draft (m)
       placeholder: ex. 5.1
@@ -108,7 +100,6 @@ body:
       required: true
 
   - type: input
-    id: std-displacement
     attributes:
       label: Standard Displacement (t)
       description: Interchangeable with normal. If only a single number is provided for displacement, assume it's standard.
@@ -116,28 +107,24 @@ body:
       required: true
 
   - type: input
-    id: sub-displacement
     attributes:
       label: Submerged Displacement (t)
     validations:
       required: false
 
   - type: input
-    id: empty-displacement
     attributes:
       label: Empty Displacement (t)
     validations:
       required: false
 
   - type: input
-    id: max-depth
     attributes:
       label: Max Depth (m)
     validations:
       required: true
 
   - type: input
-    id: crew
     attributes:
       label: Complement
       placeholder: ex. 31
@@ -151,7 +138,6 @@ body:
         Please provide some information on propulsion, speeds, etc. for the sub.
 
   - type: dropdown
-    id: propulsion-type
     attributes:
       label: Primary Propulsion Type
       multiple: false
@@ -164,7 +150,6 @@ body:
       required: true
 
   - type: input
-    id: propulsion
     attributes:
       label: Propulsion
       description: Number, make, and type of primary engines. For diesel-electric subs, this will be the diesel engines.
@@ -173,21 +158,18 @@ body:
       required: true
 
   - type: input
-    id: max-speed
     attributes:
       label: Flank Speed at Surface (kt)
     validations:
       required: true
 
   - type: input
-    id: max-speed-sub
     attributes:
       label: Flank Speed Submerged (kt)
     validations:
       required: false
 
   - type: input
-    id: range
     attributes:
       label: Range (nm) at Speed (kt)
       description: This will usually be at the sub's cruise speed.
@@ -196,7 +178,6 @@ body:
       required: true
 
   - type: input
-    id: aip-range
     attributes:
       label: Range (nm) on AIP
       description: If the sub is capable of AIP, how far is its range when using this method of propulsion?
@@ -205,7 +186,6 @@ body:
       required: false
 
   - type: input
-    id: fuel
     attributes:
       label: Fuel Capacity (kg)
     validations:
@@ -214,11 +194,10 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Seeing & Shooting
+        ## Sensing & Shooting
         Please list as many of the sub's sensors and mounts (i.e. weapons) as you can.
 
   - type: textarea
-    id: sensors
     attributes:
       label: Sensors
       description: | 
@@ -233,7 +212,6 @@ body:
       required: true
 
   - type: textarea
-    id: mounts
     attributes:
       label: Mounts
       description: |
@@ -247,7 +225,6 @@ body:
       required: true
 
   - type: textarea
-    id: mounts
     attributes:
       label: Magazines
       description: |
@@ -264,7 +241,6 @@ body:
         Finally, please describe any other special capabilities the sub has.
 
   - type: textarea
-    id: comms
     attributes:
       label: Comms/Datalinks
       description: |
@@ -279,7 +255,6 @@ body:
       required: false
 
   - type: dropdown
-    id: codes
     attributes:
       label: sub Codes
       description: Indicate which (if any) of the following DB codes apply to this vessel.
@@ -303,7 +278,6 @@ body:
         ## Final Touches
 
   - type: textarea
-    id: comments
     attributes:
       label: Comments
       description: Anything else you think we need to know in order to effectively model this platform.
@@ -311,7 +285,6 @@ body:
       required: false
 
   - type: textarea
-    id: sources
     attributes:
       label: Sources
       description: |

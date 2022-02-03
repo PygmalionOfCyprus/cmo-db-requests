@@ -1,7 +1,7 @@
-name: New Aircraft Request
-description: This form is used to request a new aircraft.
-# title: "New Aircraft: "
-labels: ["addition", "aircraft"]
+name: New Weapon Request
+description: This form is used to request a new weapon.
+# title: "New Weapon: "
+labels: ["addition", "weapon"]
 # assignees:
 #   - octocat
 
@@ -9,12 +9,12 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to submit a new aircraft request!
+        Thank you for taking the time to submit a new weapon request!
 
-        ### ...Okay, how much of this do I *really* need to fill out?
-        Although only some of these fields are "required," please do your best to supply as much information as possible. What you don't give us, we need to hunt down ourselves or estimate.
+        ### A Note on Requesting Subcomponents
+        Subcomponents -- such as weapons and sensors -- are of little use without a host. While it is true that weapon records / sensors may be added to various platforms in the mission editor, a weapon/sensor that is not currently employed on any platform in the DB is rarely worth the time it takes to add.
 
-        If you can't (or don't want) to provide this information, consider whether filing a DB request will be helpful.
+        If the weapon/sensor *is* employed on another platform, it may be worth simply filing an update or loadout request instead. If we need you to file a separate subcomponent request, we'll let you know!
 
   - type: markdown
     attributes:
