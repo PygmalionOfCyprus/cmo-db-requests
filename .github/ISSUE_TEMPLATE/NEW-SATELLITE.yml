@@ -9,11 +9,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to request a new satellite!
-
-        Although only some of these fields are "required," please do your best to supply as much information as possible. What you don't give us, we need to hunt down ourselves or estimate.
-
-        If you can't (or don't want) to provide this information, consider whether filing a DB request will be helpful.
+        Thank you for taking the time to request a new satellite.
 
   - type: markdown
     attributes:
@@ -23,15 +19,15 @@ body:
   - type: checkboxes
     attributes:
       label: Hypothetical
-      description: Is this a hypothetical satellite, i.e. one not yet or never placed in service -- or never confirmed?
+      description: Is this a hypothetical satellite, i.e. one not yet or never placed in service -- or never confirmed to have been?
       options:
         - label: "Yes"
           required: false
 
   - type: input
     attributes:
-      label: Family Name
-      description: What is the satellite called? If a series of satellites, provide the general program name; this may differ from individual satellites.
+      label: Series Name
+      description: What is the satellite called? For satellite series, provide the general program name.
       placeholder: ex. Jumpseat
     validations:
       required: true
@@ -66,7 +62,7 @@ body:
   - type: input
     attributes:
       label: In Commission
-      description: When was this satellite series in service?
+      description: When was this satellite/series in service?
       placeholder: ex. 1971-1985
     validations:
       required: false
@@ -75,28 +71,28 @@ body:
     attributes:
       value: |
         ## Dimensions and Weights
-        These numbers are less important for satellites than, say, for aircraft -- so don't worry if you can't find some or all of this data.
+        These numbers are less important for satellites than, say, for aircraft, so don't worry if you can't find some (or any) of this data.
 
   - type: input
     attributes:
       label: Length (m)
       placeholder: ex. 1
     validations:
-      required: true
+      required: false
 
   - type: input
     attributes:
       label: Width/Span (m)
       placeholder: ex. 1
     validations:
-      required: true
+      required: false
 
   - type: input
     attributes:
       label: Height (m)
       placeholder: ex. 1
     validations:
-      required: true
+      required: false
 
   - type: input
     attributes:
@@ -121,7 +117,7 @@ body:
     attributes:
       label: TLE
       description: | 
-        Provide a two or three line TLE for each satellite in the series. If there were an excessive number of launches, you may instead provide a link to an online source in which this information is provided.
+        Provide a two or three line TLE for each satellite in the series. If there were many launches, you may instead provide a link to an online source in which this information is provided.
       placeholder: |
         1 46320U 20061BA  21193.49823640  .00000228  00000-0  17253-4 0  9990
         2 46320  97.4876 266.6950 0001318 223.9323 261.1888 15.11370748 47168
@@ -137,7 +133,7 @@ body:
     attributes:
       label: Sensors
       description: | 
-        List the satellite's sensors, placing each mount on a new line as in the example. Information on sensor models are rarely available for satellites, so generic listings are acceptable.
+        List the satellite's sensors, placing each mount on a new line as in the example. Generic sensors are acceptable.
       placeholder: |
         1x Generic Satellite Visual Camera (3rd Gen)
         1x Generic Satellite SIGINT
@@ -152,7 +148,7 @@ body:
   - type: textarea
     attributes:
       label: Comments
-      description: Anything else you think we need to know in order to effectively model this platform.
+      description: Is there anything else you want to tell us so we can more effectively model this platform?
     validations:
       required: false
 
@@ -160,8 +156,8 @@ body:
     attributes:
       label: Sources
       description: |
-        Please list all the sources you used to find the information you provided. If offline, provide title, author, and page.
+        Please list all the sources you used to find the information you provided. For offline sources, provide title, author, and page (as applicable).
 
-        We do check these where possible. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
+        We do check these. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
     validations:
       required: true

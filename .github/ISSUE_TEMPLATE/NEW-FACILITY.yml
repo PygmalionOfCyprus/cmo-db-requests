@@ -1,5 +1,5 @@
 name: New Facility Request
-description: This form is used to request a new facility (SAMs, SSMs, etc.).
+description: This form is used to request new facilities (SAMs, SSMs, etc.).
 # title: "New Facility: "
 labels: ["addition", "facility"]
 # assignees:
@@ -9,25 +9,17 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to request a new facility!
+        Thank you for taking the time to request a new facility.
 
-        ### Facility or Ground Unit?
-        As a rule of thumb, if the system is defined by the effect it has *on other domains*, it's probably best modelled as a facility. A SAM system, for example, is meant to engage targets in the air; a coastal defense missile battery is intended to engage targets at sea; this despite both technically being land-based platforms.
+      # ### Facility or Ground Unit?
+      # As a rule of thumb, if the system is defined by the effect it has *on other domains*, it's probably best modelled as a facility. A SAM system, for example, is meant to engage targets in the air; a coastal defense missile battery is intended to engage targets at sea; this despite both technically being land-based platforms.
 
-        Modelling as a Ground Unit is more appropriate for land combat vehicles, i.e. vehicles whose primary purpose is to spot, engage, and destroy other targets on land or otherwise influence operations in that domain. Tanks, APCs/IFVs, trucks, and cars are all examples of vehicles best modelled in the Ground Units annex.
-
-        ### ...Okay, how much of this do I *really* need to fill out?
-        Although only some of these fields are "required," please do your best to supply as much information as possible. What you don't give us, we need to hunt down ourselves or estimate.
-
-        If you can't (or don't want) to provide this information, consider whether filing a DB request will be helpful.
+      # Modelling as a Ground Unit is more appropriate for land combat vehicles, i.e. vehicles whose primary purpose is to spot, engage, and destroy other targets on land or otherwise influence operations in that domain. Tanks, APCs/IFVs, trucks, and cars are all examples of vehicles best modelled in the Ground Units annex.
 
   - type: markdown
     attributes:
       value: |
         ## Basic Information
-        Please provide some basic information on the facility. 
-        
-        This is used to determine how it will appear in-sim and in the DB viewer.
 
   - type: checkboxes
     attributes:
@@ -49,7 +41,7 @@ body:
     attributes:
       label: Facility Type
       description: Choose the type descriptor that best describes this facility. In most cases this will match the name.
-      multiple: true
+      multiple: false
       options:
         - Radar
         - SAM
@@ -63,6 +55,8 @@ body:
         - Ammo
         - Fuel
         - Supply
+    validations:
+      required: true 
 
   - type: input
     attributes:
@@ -81,52 +75,10 @@ body:
   - type: input
     attributes:
       label: In Commission
-      description: When was the facility in-service with the aforementioned country and service?
+      description: When was the facility in service?
       placeholder: ex. 1959-1961
     validations:
       required: false
-
-  - type: markdown
-    attributes:
-      value: |
-        ## Sensing & Shooting
-        Please list the facility's primary sensors and mounts where applicable.
-
-  - type: textarea
-    attributes:
-      label: Sensors
-      description: |
-        List the facility's sensors, placing each on a new line as in the example.
-      placeholder: |
-        1x KALKAN-II Radar
-        1x ASELFLIR-300D EOS
-    validations:
-      required: true
-
-  - type: textarea
-    attributes:
-      label: Mounts
-      description: |
-        List the facility's mounts (weapons), placing each on a new line.
-      placeholder: |
-        3x HISAR-A TEL
-    validations:
-      required: true
-
-  - type: textarea
-    attributes:
-      label: Magazines
-      description: |
-        Describe the facility's available on-site reloads, if known and applicable.
-      placeholder: |
-        24x HISAR-A Missles
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## Miscellanious Specifications
 
   - type: input
     attributes:
@@ -141,7 +93,48 @@ body:
       description: How far apart are the individual "mounts" usually positioned? For example, in a SAM site, how far apart are the TELs?
       placeholder: ex. 40
     validations:
-      required: false      
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Sensing & Shooting
+
+  - type: textarea
+    attributes:
+      label: Sensors
+      description: |
+        List the facility's sensors where applicable, placing each on a new line as in the example.
+      placeholder: |
+        1x KALKAN-II Radar
+        1x ASELFLIR-300D EOS
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Mounts
+      description: |
+        List the facility's mounts (i.e., weapons) where applicable, placing each on a new line.
+      placeholder: |
+        3x HISAR-A TEL
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Magazines
+      description: |
+        List the facility's available reloads.
+      placeholder: |
+        24x HISAR-A Missles
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Miscellanious Capabilities
 
   - type: textarea
     attributes:
@@ -160,7 +153,7 @@ body:
   - type: textarea
     attributes:
       label: Comments
-      description: Anything else you think we need to know in order to effectively model this platform.
+      description: Is there anything else you want to tell us so we can more effectively model this platform?
     validations:
       required: false
 
@@ -168,8 +161,8 @@ body:
     attributes:
       label: Sources
       description: |
-        Please list all the sources you used to find the information you provided. If offline, provide title, author, and page.
+        Please list all the sources you used to find the information you provided. For offline sources, provide title, author, and page (as applicable).
 
-        We do check these where possible. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
+        We do check these. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
     validations:
       required: true

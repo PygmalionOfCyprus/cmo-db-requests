@@ -1,5 +1,5 @@
 name: New Ship Request
-description: This form is used to request a new ship/boat/watercraft.
+description: This form is used to request new ships/boats/watercraft.
 # title: "New Ship: "
 labels: ["addition", "ship"]
 # assignees:
@@ -9,7 +9,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to request a new ship!
+        Thank you for taking the time to request a new ship.
 
         ### On Class Requests
         If you're requesting an entire class of ship rather than a specific vessel, please fill out the form as if for the class nameship. For example, if requesting the Arleigh Burke-class, fill out the form as if for DDG-51.
@@ -17,20 +17,12 @@ body:
         If the class saw significant changes/blocks/flights/etc., it may be worth filing separate requests to cover these differences. Please fill out the follow-on forms as if for the block/flight nameship. For example, if requesting a Flight II Arleigh Burke-class, fill out the form as if for DDG-72.
 
         ### On Multinational Vessels
-        Be cautious filing single requests for ships in the service of multiple countries. Most ships are sold with different fittings or refit on transfer to different countries; these changes often warrant separate requests.
-
-        ### ...Okay, how much of this do I *really* need to fill out?
-        Although only some of these fields are "required," please do your best to supply as much information as possible. What you don't give us, we need to hunt down ourselves or estimate.
-
-        If you can't (or don't want) to provide this information, consider whether filing a DB request will be helpful.
+        Be cautious filing single requests for ships in the service of multiple countries. Most ships are sold with different fittings or refit on transfer; these changes often warrant separate requests.
 
   - type: markdown
     attributes:
       value: |
         ## Basic Information
-        Please provide some basic information on the ship. 
-        
-        This is used to determine how the ship appears in-sim and in the DB viewer.
 
   - type: checkboxes
     attributes:
@@ -84,9 +76,6 @@ body:
     attributes:
       value: |
         ## Dimensions and Tonnage
-        Please provide measurements for the ship.
-        
-        This is used to determine a number of critical factors in-sim, including "damage points" (DP), signature, etc.
 
   - type: input
     attributes:
@@ -113,18 +102,21 @@ body:
     attributes:
       label: Standard Displacement (t)
       description: Interchangeable with normal. If only a single number is provided for displacement, assume it's standard.
+      placeholder: ex. 1600
     validations:
       required: true
 
   - type: input
     attributes:
       label: Full Displacement (t)
+      placeholder: ex. 2000
     validations:
       required: false
 
   - type: input
     attributes:
       label: Empty Displacement (t)
+      placeholder: ex. 1400
     validations:
       required: false
 
@@ -147,9 +139,6 @@ body:
     attributes:
       value: |
         ## Propulsion
-        Please provide some information on propulsion, speed, etc. for the ship.
-        
-        This is used to determine...well, take a wild guess.
 
   - type: dropdown
     attributes:
@@ -177,12 +166,14 @@ body:
   - type: input
     attributes:
       label: Fuel Capacity (kg)
+      placeholder: ex. 1300
     validations:
       required: false
 
   - type: input
     attributes:
       label: Flank Speed (kt)
+      placeholder: ex. 26
     validations:
       required: true
 
@@ -198,15 +189,12 @@ body:
     attributes:
       value: |
         ## Sensing & Shooting
-        This is where the fun begins. Please list as many of the ship's sensors and mounts (i.e. weapons) as you can.
 
   - type: textarea
     attributes:
       label: Sensors
       description: | 
-        List the ship's sensors. All of them, if you can -- not just the most important ones. If you don't know an exact model, record a generic and provide as much supplementary information as you can.
-
-        Please place each mount on a new line as in the example.
+        List the ship's sensors, placing each on a new line as in the example.
       placeholder: |
         2x Generic Navigation Radar (Furuno)
         1x TRS-3D
@@ -218,13 +206,11 @@ body:
     attributes:
       label: Mounts
       description: |
-        List the ship's mounts (i.e., weapons): guns, missiles, torpedoes, VLS, etc.
-
-        Please place each mount on a new line as in the example.
+        List the ship's mounts (i.e., weapons), placing each on a new line as in the example. For torpedo tubes, VLS, etc. indicate what weapons are loaded.
       placeholder: |
-        1x 76mm/62 OTO Melara Super Rapido
-        2x 30mm Typhoon RWS
-        2x MM.40 Quad Launchers
+        1x 76mm/62 OTO Melara Super Rapido w/ DART Ammo
+        2x 533m Triple Torpedo Tube w/ Black Shark Torpedoes
+        2x MM.40 Quad Launchers w/ Exocet Blk 3A
     validations:
       required: true
 
@@ -232,15 +218,12 @@ body:
     attributes:
       value: |
         ## Miscellanious Capabilities
-        Finally, please describe any other special capabilities the ship has.
 
   - type: textarea
     attributes:
       label: Aircraft & Docking Facilities
       description: |
-        List any docking and/or aircraft facilities.
-
-        Please place each mount on a new line as in the example.
+        List any docking and/or aircraft facilities, placing each on a new line as in the example.
       placeholder: |
         2x Davits for 7m RHIB
         1x Pad/Hangar for Medium Helicopter
@@ -251,7 +234,7 @@ body:
     attributes:
       label: Comms/Datalinks
       description: |
-        List any known comms systems or datalinks, placing each mount on a new line as in the example.
+        List any known comms systems or datalinks, placing each on a new line as in the example.
       placeholder: |
         VHF/UHF Radio
         SATCOM
@@ -284,6 +267,8 @@ body:
         - Low Construction Standards
         - Laid Down Before 1930
         - Helo In-Flight Refuel (HIFR) Capable
+    validations:
+      required: false
 
   - type: markdown
     attributes:
@@ -293,7 +278,7 @@ body:
   - type: textarea
     attributes:
       label: Comments
-      description: Anything else you think we need to know in order to effectively model this platform.
+      description: Is there anything else you want to tell us so we can more effectively model this platform?
     validations:
       required: false
 
@@ -301,8 +286,8 @@ body:
     attributes:
       label: Sources
       description: |
-        Please list all the sources you used to find the information you provided. If offline, provide title, author, and page.
+        Please list all the sources you used to find the information you provided. For offline sources, provide title, author, and page (as applicable).
 
-        We do check these where possible. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
+        We do check these. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
     validations:
       required: true

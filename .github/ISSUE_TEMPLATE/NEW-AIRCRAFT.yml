@@ -1,5 +1,5 @@
 name: New Aircraft Request
-description: This form is used to request a new aircraft.
+description: This form is used to request new aircraft.
 # title: "New Aircraft: "
 labels: ["addition", "aircraft"]
 # assignees:
@@ -9,20 +9,12 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to request a new aircraft!
-
-        ### ...Okay, how much of this do I *really* need to fill out?
-        Although only some of these fields are "required," please do your best to supply as much information as possible. What you don't give us, we need to hunt down ourselves or estimate.
-
-        If you can't (or don't want) to provide this information, consider whether filing a DB request will be helpful.
+        Thank you for taking the time to request a new aircraft.
 
   - type: markdown
     attributes:
       value: |
         ## Basic Information
-        Please provide some basic information on the aircraft. 
-        
-        This is used to determine how the aircraft appears in-sim and in the DB viewer.
 
   - type: checkboxes
     attributes:
@@ -66,9 +58,6 @@ body:
     attributes:
       value: |
         ## Dimensions and Weights
-        Please provide specifications for the aircraft.
-        
-        This is used to determine a number of critical factors in-sim.
 
   - type: input
     attributes:
@@ -94,19 +83,21 @@ body:
   - type: input
     attributes:
       label: Empty Weight (kg)
-      description: Interchangeable with normal. If only a single number is provided for displacement, assume it's standard.
+      placeholder: ex. 1400
     validations:
       required: true
 
   - type: input
     attributes:
       label: Maximum Takeoff Weight (MTOW) (kg)
+      placeholder: ex. 1900
     validations:
-      required: false
+      required: true
 
   - type: input
     attributes:
       label: Payload Weight (kg)
+      placeholder: ex. 500
     validations:
       required: false
 
@@ -121,7 +112,6 @@ body:
     attributes:
       value: |
         ## Propulsion
-        Please provide some information on propulsion, speeds, etc. for the aircraft.
 
   - type: input
     attributes:
@@ -136,7 +126,7 @@ body:
       label: Rate of Climb (ft/min)
       placeholder: ex. 800
     validations:
-      required: true
+      required: false
 
   - type: input
     attributes:
@@ -148,12 +138,14 @@ body:
   - type: input
     attributes:
       label: Military/Afterburner Speed (kt)
+      placeholder: ex. 520
     validations:
       required: true
 
   - type: input
     attributes:
       label: Cruise Speed (kt)
+      placeholder: ex. 480
     validations:
       required: true
 
@@ -168,22 +160,22 @@ body:
   - type: input
     attributes:
       label: Ferry Range (nm)
-      placeholder: ex. 915
       description: Aircraft range at cruise speed w/ ferry loadout.
+      placeholder: ex. 915
     validations:
       required: true
 
   - type: input
     attributes:
-      label: Takeoff / Landing Distance (m)
-      placeholder: ex. 700 / 600
+      label: Endurance (min)
+      placeholder: ex. 600
     validations:
       required: false
 
   - type: input
     attributes:
-      label: Endurance (min)
-      placeholder: ex. 600
+      label: Takeoff / Landing Distance (m)
+      placeholder: ex. 700 / 600
     validations:
       required: false
 
@@ -197,13 +189,12 @@ body:
     attributes:
       value: |
         ## Sensing & Shooting
-        Please list as many of the aircraft's sensors, mounts (i.e. weapons), and loadout options as you can.
 
   - type: textarea
     attributes:
       label: Sensors
       description: | 
-        List the aircraft's sensors, placing each mount on a new line as in the example. All of them, if you can -- not just the most important ones. If you don't know an exact model, record a generic and provide as much supplementary information as you can.
+        List the aircraft's sensors, placing each on a new line as in the example.
       placeholder: |
         1x AWG-20 FCR
         1x APS-21 Surveillance Radar
@@ -216,7 +207,7 @@ body:
     attributes:
       label: Mounts
       description: |
-        List the aircraft mounts (i.e., weapons), placing each mount on a new line as in the example. This will only include non-removable weapons, e.g. cannon; missiles, bombs, etc. should be listed as loadout options. 
+        List the aircraft mounts (i.e., weapons), placing each on a new line as in the example. For aircraft, this will include only non-removable weapons, e.g. cannon; missiles, bombs, etc. should be listed as loadout options.
       placeholder: |
         1x ROV-20 Laser Cannon
         1x 55mm GU-11 Gun Pod (always installed)
@@ -242,13 +233,12 @@ body:
     attributes:
       value: |
         ## Miscellanious Capabilities
-        Finally, please describe any other special capabilities the aircraft has.
 
   - type: textarea
     attributes:
       label: Comms/Datalinks
       description: |
-        List any known comms systems or datalinks, placing each mount on a new line as in the example.
+        List any known comms systems or datalinks, placing each on a new line as in the example.
       placeholder: |
         UHF Radio [Secure]
         VHF Radio [Secure]
@@ -259,7 +249,7 @@ body:
   - type: dropdown
     attributes:
       label: Aircraft Codes
-      description: Indicate which (if any) of the following DB codes apply to this vessel.
+      description: Indicate which (if any) of the following DB codes apply to this aircraft.
       multiple: true
       options:
         - Supermanouverability
@@ -280,6 +270,8 @@ body:
         - Centerline Drogue
         - Wing Drogue
         - Centerline Boom
+    validations:
+      required: false
 
   - type: markdown
     attributes:
@@ -289,7 +281,7 @@ body:
   - type: textarea
     attributes:
       label: Comments
-      description: Anything else you think we need to know in order to effectively model this platform.
+      description: Is there anything else you want to tell us so we can more effectively model this platform?
     validations:
       required: false
 
@@ -297,8 +289,8 @@ body:
     attributes:
       label: Sources
       description: |
-        Please list all the sources you used to find the information you provided. If offline, provide title, author, and page.
+        Please list all the sources you used to find the information you provided. For offline sources, provide title, author, and page (as applicable).
 
-        We do check these where possible. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
+        We do check these. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
     validations:
       required: true

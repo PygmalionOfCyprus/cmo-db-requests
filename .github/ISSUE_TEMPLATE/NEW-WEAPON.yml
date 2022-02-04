@@ -9,17 +9,17 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to request a new weapon!
+        Thank you for taking the time to request a new weapon.
 
         ### A Note on Requesting Subcomponents
         Subcomponents -- such as weapons and sensors -- are of little use without a host. While it is true that weapon records / sensors may be added to various platforms in the mission editor, a weapon/sensor that is not currently employed on any platform in the DB is rarely worth the time it takes to add.
 
-        If the weapon/sensor *is* employed on another platform, it may be worth simply filing an addition, update, or loadout request instead. If we need you to file a separate subcomponent request, we'll let you know!
+        If the weapon/sensor *is* employed on another platform but not represented in the DB, it may be better to file an addition, update, or loadout request instead. If we need you to file a separate subcomponent request, we'll let you know.
 
   - type: markdown
     attributes:
       value: |
-        ## Basic Information
+        ## Common Information
 
   - type: checkboxes
     attributes:
@@ -84,16 +84,16 @@ body:
 
   - type: input
     attributes:
-      label: Launch Altitude / Depth (ft)
-      description: How deep/high must/can a shooter be when employing this weapon? Specify AGL or ASL.
+      label: Target Altitude / Depth (ft)
+      description: How deep/high can a target be and still be successfully engaged by this weapon? Specify AGL or ASL.
       placeholder: ex. 200ft AGL - 35000ft ASL
     validations:
       required: false
 
   - type: input
     attributes:
-      label: Target Altitude / Depth (ft)
-      description: How deep/high can the target be in order to be successfully engaged by this weapon? Specify AGL or ASL.
+      label: Launch Altitude / Depth (ft)
+      description: How deep/high can a shooter be and still employ this weapon? Specify AGL or ASL.
       placeholder: ex. 200ft AGL - 35000ft ASL
     validations:
       required: false
@@ -101,7 +101,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## The Pointy End
+        ## Lethality
 
   - type: input
     attributes:
@@ -133,6 +133,8 @@ body:
         - Mobile Target - Soft
         - Mobile Target - Hardened
         - Mobile Target - Personnel
+    validations:
+      required: true
 
   - type: input
     attributes:
@@ -151,9 +153,9 @@ body:
     attributes:
       label: Sensors
       description: | 
-        List the weapon's sensors, placing each on a new line as in the example. Most weapons will have one or two, generally a primary seeker (Active Radar, Sonar, etc.) and sometimes a secondary (Passive Radar, TV, etc.).
+        List the weapon's sensors, placing each on a new line as in the example. Most weapons will have one or two for terminal guidance.
 
-        If you have specific information about the seeker's capabilities, you can include it here.
+        If you have specific information about the seekers' capabilities, you can include it here.
       placeholder: |
         1x Active Radar Seeker (~5nm Range)
         1x IIR Seeker (2nd Gen)
@@ -163,7 +165,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Miscellanious Capabilities
+        ## Capabilities
 
   - type: dropdown
     attributes:
@@ -228,6 +230,8 @@ body:
         - Torpedo - Straight-Running & Time Detonation
         - Torpedo - Pattern-Running
         - Level Cruise Flight
+    validations:
+      required: false
 
   - type: markdown
     attributes:
@@ -237,7 +241,7 @@ body:
   - type: textarea
     attributes:
       label: Comments
-      description: Anything else you think we need to know in order to effectively model this weapon.
+      description: Is there anything else you want to tell us so we can more effectively model this weapon?
     validations:
       required: false
 
@@ -245,8 +249,8 @@ body:
     attributes:
       label: Sources
       description: |
-        Please list all the sources you used to find the information you provided. If offline, provide title, author, and page.
-
-        We do check these where possible. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
+        Please list all the sources you used to find the information you provided. For offline sources, provide title, author, and page (as applicable).
+        
+        We do check these. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
     validations:
       required: true

@@ -1,5 +1,5 @@
-name: New Radar/Sonar Request
-description: This form is used to request new radar/sonar.
+name: New Sensor Request
+description: This form is used to request new sensors, specifically radar and sonar.
 # title: "New Sensor: "
 labels: ["addition", "sensor"]
 # assignees:
@@ -9,12 +9,12 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to request a new sensor!
+        Thank you for taking the time to request a new sensor. Although *Command* models a wide variety of sensor types, this form is only intended for use with radar and sonar. Other sensors are simple enough to model that they will never require a separate subcomponent request (see below).
 
         ### A Note on Requesting Subcomponents
         Subcomponents -- such as weapons and sensors -- are of little use without a host. While it is true that weapon records / sensors may be added to various platforms in the mission editor, a weapon/sensor that is not currently employed on any platform in the DB is rarely worth the time it takes to add.
 
-        If the weapon/sensor *is* employed on another platform, it may be worth simply filing an addition, update, or loadout request instead. If we need you to file a separate subcomponent request, we'll let you know!
+        If the weapon/sensor *is* employed on another platform but not represented in the DB, it may be better to file an addition, update, or loadout request instead. If we need you to file a separate subcomponent request, we'll let you know.
 
   - type: markdown
     attributes:
@@ -62,6 +62,11 @@ body:
     validations:
       required: true
 
+  - type: markdown
+    attributes:
+      value: |
+        ## Capabilities
+
   - type: dropdown
     attributes:
       label: Sensor Capabilities
@@ -88,6 +93,42 @@ body:
         - Weather and Navigation Only
     validations:
       required: true
+
+  - type: dropdown
+    attributes:
+      label: Sensor Codes
+      description: Indicate which (if any) of the following capability codes apply to this sensor.
+      multiple: true
+      options:
+        - Identification Friend or Foe (IFF) [Side Info]
+        - Classification [Class Info] / Brilliant Weapon [Automatic Target Acquisition]
+        - Non-Cooperative Target Recognition (NCTR) - Jet Engine Modulation [Class Info]
+        - Non-Cooperative Target Recognition (NCTR) - Narrow Beam Interleaved Search and Track [Class Info]
+        - Continuous Tracking Capability
+        - Track While Scan (TWS)
+        - Periscope Search - Basic Capability
+        - Periscope/Surface Search - Fine Range Resolution + Rapid Scan [1980+]
+        - Periscope/Surface Search - Advanced Processing [2000+]
+        - Moving Target Indicator (MTI)
+        - Low Probability of Intercept (LPI)
+        - Pulse-Only Radar
+        - Pulse Doppler Radar (Full LDSD Capability)
+        - Pulse Doppler Radar (Limited LDSD Capability)
+        - Passive Electronically Scanned Array (PESA)
+        - Active Electronically Scanned Array (AESA)
+        - Can Classify Ground Targets (SAR)
+        - Continuous Wave Illumination
+        - Interrupted Continuous Wave Illumination
+        - Frequency Agile
+        - Cognitive EW
+        - Generates AAW Fire-Control Data
+        - Shallow Water Capable (Partial)
+        - Shallow Water Capable (Full) [Classification Flag Required]
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Frequencies
 
   - type: dropdown
     attributes:
@@ -257,48 +298,12 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Miscellanious Capabilities
-
-  - type: dropdown
-    attributes:
-      label: Sensor Codes
-      description: Indicate which (if any) of the following capability codes apply to this sensor.
-      multiple: true
-      options:
-        - Identification Friend or Foe (IFF) [Side Info]
-        - Classification [Class Info] / Brilliant Weapon [Automatic Target Acquisition]
-        - Non-Cooperative Target Recognition (NCTR) - Jet Engine Modulation [Class Info]
-        - Non-Cooperative Target Recognition (NCTR) - Narrow Beam Interleaved Search and Track [Class Info]
-        - Continuous Tracking Capability
-        - Track While Scan (TWS)
-        - Periscope Search - Basic Capability
-        - Periscope/Surface Search - Fine Range Resolution + Rapid Scan [1980+]
-        - Periscope/Surface Search - Advanced Processing [2000+]
-        - Moving Target Indicator (MTI)
-        - Low Probability of Intercept (LPI)
-        - Pulse-Only Radar
-        - Pulse Doppler Radar (Full LDSD Capability)
-        - Pulse Doppler Radar (Limited LDSD Capability)
-        - Passive Electronically Scanned Array (PESA)
-        - Active Electronically Scanned Array (AESA)
-        - Can Classify Ground Targets (SAR)
-        - Continuous Wave Illumination
-        - Interrupted Continuous Wave Illumination
-        - Frequency Agile
-        - Cognitive EW
-        - Generates AAW Fire-Control Data
-        - Shallow Water Capable (Partial)
-        - Shallow Water Capable (Full) [Classification Flag Required]
-
-  - type: markdown
-    attributes:
-      value: |
         ## Final Touches
 
   - type: textarea
     attributes:
       label: Comments
-      description: Anything else you think we need to know in order to effectively model this sensor.
+      description: Is there anything else you want to tell us so we can more effectively model this sensor?
     validations:
       required: false
 
@@ -306,8 +311,8 @@ body:
     attributes:
       label: Sources
       description: |
-        Please list all the sources you used to find the information you provided. If offline, provide title, author, and page.
+        Please list all the sources you used to find the information you provided. For offline sources, provide title, author, and page (as applicable).
 
-        We do check these where possible. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
+        We do check these. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
     validations:
       required: true

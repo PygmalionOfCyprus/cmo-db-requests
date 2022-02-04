@@ -9,11 +9,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to request a new loadout!
-
-        Although only some of these fields are "required," please do your best to supply as much information as possible. What you don't give us, we need to hunt down ourselves or estimate.
-
-        If you can't (or don't want) to provide this information, consider whether filing a DB request will be helpful.
+        Thank you for taking the time to request a new loadout.
 
   - type: markdown
     attributes:
@@ -23,7 +19,7 @@ body:
   - type: input
     attributes:
       label: User(s)
-      description: Which aircraft use this/these loadout(s)? If for a specific aircraft, please provide DBIDs; otherwise, a simple descriptor will suffice.
+      description: Which aircraft use this/these loadout(s)? If possible, please provide DBIDs; otherwise, a simple descriptor will suffice.
       placeholder: ex. USN F/A-18Cs, 2012-
     validations:
       required: true
@@ -51,7 +47,7 @@ body:
   - type: input
     attributes:
       label: Default Combat Radius (nm)
-      description: How far was the aircraft capable of flying with this loadout under normal conditions?
+      description: How far is the aircraft capable of flying with this loadout under normal conditions?
       placeholder: ex. 3600
     validations:
       required: false
@@ -59,22 +55,24 @@ body:
   - type: dropdown
     attributes:
       label: Weather Restrictions
-      multiple: true
-      default: 
+      multiple: false
       options:
         - All-Weather
         - Limited All-Weather
         - Clear Weather
+    validations:
+      required: true
 
   - type: dropdown
     attributes:
       label: Time-of-Day Restrictions
       multiple: true
-      default: 
       options:
         - Day & Night
         - Day-Only
         - Night-Only
+    validations:
+      required: true
 
   - type: checkboxes
     attributes:
@@ -92,7 +90,7 @@ body:
   - type: textarea
     attributes:
       label: Comments
-      description: Anything else you think we need to know in order to effectively model this loadout.
+      description: Is there anything else you want to tell us so we can more effectively model this loadout?
     validations:
       required: false
 
@@ -100,8 +98,8 @@ body:
     attributes:
       label: Sources
       description: |
-        Please list all the sources you used to find the information you provided. If offline, provide title, author, and page.
+        Please list all the sources you used to find the information you provided. For offline sources, provide title, author, and page (as applicable).
 
-        We do check these where possible. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
+        We do check these. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
     validations:
       required: true
