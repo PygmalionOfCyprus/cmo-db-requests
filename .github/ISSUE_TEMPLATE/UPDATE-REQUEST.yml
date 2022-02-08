@@ -1,5 +1,5 @@
 name: Update Request
-description: For edits to entries extant.
+description: This form is used to request edits to extant entries.
 # title: "Update: "
 labels: ["update"]
 # assignees:
