@@ -16,6 +16,17 @@ body:
 
       # Modelling as a Ground Unit is more appropriate for land combat vehicles, i.e. vehicles whose primary purpose is to spot, engage, and destroy other targets on land or otherwise influence operations in that domain. Tanks, APCs/IFVs, trucks, and cars are all examples of vehicles best modelled in the Ground Units annex.
 
+  - type: dropdown
+    attributes:
+      label: DB Selector
+      description: Is this for DB3K or CWDB?
+      multiple: false
+      options:
+        - DB3K
+        - CWDB
+    validations:
+      required: true
+
   - type: markdown
     attributes:
       value: |

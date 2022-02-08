@@ -1,0 +1,7 @@
+# Add/remove 'DB3K' label if 'DB3K' exists in the issue text.
+DB3K:
+  - 'DB3K'
+
+# Add/remove 'CWDB' label if 'CWDB' exists in the issue text.
+CWDB:
+  - 'CWDB'

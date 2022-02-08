@@ -1,0 +1,53 @@
+name: Update Request
+description: For edits to entries extant.
+# title: "Update: "
+labels: ["update"]
+# assignees:
+#   - octocat
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for requesting an update to the DB. An "update" can be anything from correcting a typo to completely changing a platform's mounts.
+
+  - type: dropdown
+    attributes:
+      label: DB Selector
+      description: Is this for DB3K or CWDB?
+      multiple: false
+      options:
+        - DB3K
+        - CWDB
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Update Details
+
+  - type: input
+    attributes:
+      label: Affected DBID(s)
+      description: Which DBIDs does this request apply to? If covering a wide spread of units, a simple descriptor will suffice.
+      placeholder: ex. USN F/A-18Cs, 2012-
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Summary of Changes
+      description: Describe what you'd like us to change in the listed entries.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Sources
+      description: |
+        Please list all the sources you used to find the information you provided. For offline sources, provide title, author, and page (as applicable).
+
+        We do check these. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
+    validations:
+      required: true

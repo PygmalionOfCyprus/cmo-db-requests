@@ -16,6 +16,17 @@ body:
 
         If the class saw significant changes/blocks/flights/etc., it may be worth filing separate requests to cover these differences. Please fill out the follow-on forms as if for the block/flight nameship. For example, if requesting the Flight II Virginia-class, fill out the form as if for SSN-778.
 
+  - type: dropdown
+    attributes:
+      label: DB Selector
+      description: Is this for DB3K or CWDB?
+      multiple: false
+      options:
+        - DB3K
+        - CWDB
+    validations:
+      required: true
+
   - type: markdown
     attributes:
       value: |

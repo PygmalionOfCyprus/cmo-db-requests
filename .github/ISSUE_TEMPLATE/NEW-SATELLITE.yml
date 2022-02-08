@@ -11,6 +11,17 @@ body:
       value: |
         Thank you for taking the time to request a new satellite.
 
+  - type: dropdown
+    attributes:
+      label: DB Selector
+      description: Is this for DB3K or CWDB?
+      multiple: false
+      options:
+        - DB3K
+        - CWDB
+    validations:
+      required: true
+
   - type: markdown
     attributes:
       value: |

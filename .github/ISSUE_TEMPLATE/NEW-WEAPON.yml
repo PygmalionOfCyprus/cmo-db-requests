@@ -16,6 +16,17 @@ body:
 
         If the weapon/sensor *is* employed on another platform but not represented in the DB, it may be better to file an addition, update, or loadout request instead. If we need you to file a separate subcomponent request, we'll let you know.
 
+  - type: dropdown
+    attributes:
+      label: DB Selector
+      description: Is this for DB3K or CWDB?
+      multiple: false
+      options:
+        - DB3K
+        - CWDB
+    validations:
+      required: true
+
   - type: markdown
     attributes:
       value: |

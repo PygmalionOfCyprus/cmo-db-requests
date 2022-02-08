@@ -19,6 +19,17 @@ body:
         ### On Multinational Vessels
         Be cautious filing single requests for ships in the service of multiple countries. Most ships are sold with different fittings or refit on transfer; these changes often warrant separate requests.
 
+  - type: dropdown
+    attributes:
+      label: DB Selector
+      description: Is this for DB3K or CWDB?
+      multiple: false
+      options:
+        - DB3K
+        - CWDB
+    validations:
+      required: true
+
   - type: markdown
     attributes:
       value: |
