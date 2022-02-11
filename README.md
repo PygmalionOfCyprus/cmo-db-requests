@@ -1,12 +1,12 @@
 # CMO DB Development (Public)
-Welcome to the public issue tracker for *Command: Modern Operations*.
+Welcome to the public request/issue tracker for the *Command: Modern Operations* database.
 
 This is an issue-only repository intended to replace the old "DB Request Threads" on the Matrix Games Forums.
 
-You can read more about why we opted to move to GitHub in [this post]().
+You can read more about why we opted to move to GitHub in [this post](https://www.matrixgames.com/forums/tm.asp?m=5144985).
 
 ## What Is This, And How Does It Work?
-Anyone wishing for changes to the DB -- unit additions, updates to existing units, bug fixes, etc. -- can post their request here, where it will be triaged, sorted, and (eventually) handled by members of the DB team.
+Anyone wishing for changes to the DB can post their request here.
 
 Please note **this is one of two trackers used by the DB team**. (The other is private/internal.) Moreover, **handling tickets is only one part of our DB workflow**. Dev activity on this tracker will wax and wane as priorities shift; tickets will often be handled out-of-order in support of larger objectives.
 
@@ -25,6 +25,8 @@ When you're ready to submit your first issue:
 4. Submit the issue.
 
 If you don't have a request in mind but still want to help, try sorting issues by the "help wanted" label!
+
+As this is an issue-only repository, contributors do not need to use forks, pull requests, etc.
 
 ## Contact & Questions
 
