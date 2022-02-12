@@ -31,7 +31,7 @@ body:
     attributes:
       label: Affected DBID(s)
       description: Which DBIDs does this request apply to? If covering a wide spread of units, a simple descriptor will suffice.
-      placeholder: ex. USN F/A-18Cs, 2012-
+      placeholder: ex. 1305
     validations:
       required: true
 

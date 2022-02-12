@@ -33,7 +33,7 @@ body:
     attributes:
       label: Affected DBID(s)
       description: Which DBIDs are affected by this bug? If the bug affects a wide array of units, a simple descriptor will suffice.
-      placeholder: ex. USN F/A-18Cs, 2012-
+      placeholder: ex. 1305
     validations:
       required: true
 
