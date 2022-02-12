@@ -27,13 +27,16 @@ body:
       value: |
         ## Basic Information
 
-  - type: checkboxes
+  - type: dropdown
     attributes:
       label: Hypothetical
-      description: Is this a hypothetical satellite, i.e. one not yet or never placed in service -- or never confirmed to have been?
+      description: Is this a hypothetical satellite, i.e. one not yet or never placed in service?
+      multiple: false
       options:
-        - label: "Yes"
-          required: false
+        - "Yes"
+        - "No"
+    validations:
+      required: true
 
   - type: input
     attributes:
@@ -117,12 +120,15 @@ body:
       value: |
         ## Orbital Data
 
-  - type: checkboxes
+  - type: dropdown
     attributes:
-      label: Is Geo-Stationary
+      label: Is Geostationary
+      multiple: false
       options:
-        - label: "Yes"
-          required: false
+        - "Yes"
+        - "No"
+    validations:
+      required: true
 
   - type: textarea
     attributes:

@@ -32,13 +32,16 @@ body:
       value: |
         ## Common Information
 
-  - type: checkboxes
+  - type: dropdown
     attributes:
       label: Hypothetical
       description: Is this a hypothetical sensor, i.e. one not yet or never placed in service?
+      multiple: false
       options:
-        - label: "Yes"
-          required: false
+        - "Yes"
+        - "No"
+    validations:
+      required: true
 
   - type: input
     attributes:

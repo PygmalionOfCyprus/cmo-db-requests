@@ -47,13 +47,16 @@ body:
     validations:
       required: true
 
-  - type: checkboxes
+  - type: dropdown
     attributes:
       label: Requires Buddy Illumination
       description: Does this loadout require buddy illumination, i.e. is it carrying laser-guided weapons that the aircraft cannot direct organically?
+      multiple: false
       options:
-        - label: "Yes"
-          required: false
+        - "Yes"
+        - "No"
+    validations:
+      required: true
 
   - type: input
     attributes:
@@ -85,13 +88,16 @@ body:
     validations:
       required: true
 
-  - type: checkboxes
+  - type: dropdown
     attributes:
       label: Capable of Quick Turnaround
       description: Can aircraft with this loadout be quickly reloaded and relaunched?
+      multiple: false
       options:
-        - label: "Yes"
-          required: false
+        - "Yes"
+        - "No"
+    validations:
+      required: true
 
   - type: markdown
     attributes:

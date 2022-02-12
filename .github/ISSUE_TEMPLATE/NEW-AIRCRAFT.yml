@@ -27,13 +27,16 @@ body:
       value: |
         ## Basic Information
 
-  - type: checkboxes
+  - type: dropdown
     attributes:
       label: Hypothetical
       description: Is this a hypothetical aircraft, i.e. one not yet or never placed in service?
+      multiple: false
       options:
-        - label: "Yes"
-          required: false
+        - "Yes"
+        - "No"
+    validations:
+      required: true
 
   - type: input
     attributes:
@@ -160,13 +163,16 @@ body:
     validations:
       required: true
 
-  - type: checkboxes
+  - type: dropdown
     attributes:
       label: Supercruise
       description: Is this aircraft capable of supercruise?
+      multiple: false
       options:
-        - label: "Yes"
-          required: false
+        - "Yes"
+        - "No"
+    validations:
+      required: true
 
   - type: input
     attributes:
