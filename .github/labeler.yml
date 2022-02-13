@@ -1,7 +1,7 @@
-# Add/remove 'DB3K' label if 'DB3K' exists in the issue text.
+# Add/remove 'DB3K' label if DB Selector is set to 'DB3K' or "Both".
 DB3K:
-  - 'DB3K'
+  - '### DB Selector\n{1,}(DB3K|Both)'
 
-# Add/remove 'CWDB' label if 'CWDB' exists in the issue text.
+# Add/remove 'CWDB' label if DB Selector is set to 'CWDB' or "Both".
 CWDB:
-  - 'CWDB'
+  - '### DB Selector\n{1,}(CWDB|Both)'

@@ -14,11 +14,12 @@ body:
   - type: dropdown
     attributes:
       label: DB Selector
-      description: Is this for DB3K or CWDB?
+      description: Is this for DB3K, CWDB, or both?
       multiple: false
       options:
         - DB3K
         - CWDB
+        - Both
     validations:
       required: true
 

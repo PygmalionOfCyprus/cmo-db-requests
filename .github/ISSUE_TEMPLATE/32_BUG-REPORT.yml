@@ -1,5 +1,5 @@
 name: Bug Report
-description: This form is for reporting bugs in the DB.
+description: This form is for reporting critical bugs in the DB.
 # title: "Bug Report: "
 labels: ["update", "bug"]
 # assignees:
@@ -11,7 +11,7 @@ body:
       value: |
         Thank you for bringing our attention to a bug! This form is similar to the update request form, but will attract more attention from the devs.
 
-        Only use this form for things which are actually *broken*: i.e., they don't work, or are so significantly screwed up that they make gameplay impossible. Inaccurate data alone only warrants a normal update request.
+        Only use this form for things which are actually *broken*: i.e., they don't work, or are so significantly screwed up that they make gameplay impossible. Typos, incorrect weapons, etc. should be reported via a normal update request.
 
   - type: dropdown
     attributes:
@@ -21,6 +21,7 @@ body:
       options:
         - DB3K
         - CWDB
+        - Both
     validations:
       required: true
 

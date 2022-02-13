@@ -1,7 +1,7 @@
-name: New Submarine Request
-description: This form is used to request new submarines/USVs.
-# title: "New Submarine: "
-labels: ["addition", "submarine"]
+name: New Ship Request
+description: This form is used to request new ships/boats/watercraft.
+# title: "New Ship: "
+labels: ["addition", "ship"]
 # assignees:
 #   - octocat
 
@@ -9,21 +9,25 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to request a new sub.
+        Thank you for taking the time to request a new ship.
 
         ### On Class Requests
-        If you're requesting an entire class of sub rather than a specific vessel, please fill out the form as if for the class nameship. For example, if requesting the Virginia-class, fill out the form as if for SSN-774.
+        If you're requesting an entire class of ship rather than a specific vessel, please fill out the form as if for the class nameship. For example, if requesting the Arleigh Burke-class, fill out the form as if for DDG-51.
 
-        If the class saw significant changes/blocks/flights/etc., it may be worth filing separate requests to cover these differences. Please fill out the follow-on forms as if for the block/flight nameship. For example, if requesting the Flight II Virginia-class, fill out the form as if for SSN-778.
+        If the class saw significant changes/blocks/flights/etc., it may be worth filing separate requests to cover these differences. Please fill out the follow-on forms as if for the block/flight nameship. For example, if requesting a Flight II Arleigh Burke-class, fill out the form as if for DDG-72.
+
+        ### On Multinational Vessels
+        Be cautious filing single requests for ships in the service of multiple countries. Most ships are sold with different fittings or refit on transfer; these changes often warrant separate requests.
 
   - type: dropdown
     attributes:
       label: DB Selector
-      description: Is this for DB3K or CWDB?
+      description: Is this for DB3K, CWDB, or both?
       multiple: false
       options:
         - DB3K
         - CWDB
+        - Both
     validations:
       required: true
 
@@ -47,21 +51,21 @@ body:
     attributes:
       label: Name
       description: Provide classification, pennant number, and name (where applicable).
-      placeholder: ex. SS-161 Stingray
+      placeholder: ex. Y 467 Harekaze
     validations:
       required: true
 
   - type: input
     attributes:
       label: Class
-      placeholder: ex. Balao-class
+      placeholder: ex. Kagerou-class
     validations:
       required: false
 
   - type: input
     attributes:
       label: Country
-      placeholder: ex. United States
+      placeholder: ex. Japan
     validations:
       required: false
 
@@ -79,7 +83,7 @@ body:
         When was the *class* in service?
         
         If requesting a specific vessel, this will match the vessel's service dates. If requesting a class (and therefore modelling a nameship), the out-of-service date may be much later than the nameship's decommissioning.
-      placeholder: ex. 1943-1971
+      placeholder: ex. 1991-Present
     validations:
       required: false
 
@@ -91,21 +95,21 @@ body:
   - type: input
     attributes:
       label: Length (m)
-      placeholder: ex. 95
+      placeholder: ex. 118.5
     validations:
       required: true
 
   - type: input
     attributes:
       label: Beam (m)
-      placeholder: ex. 8.3
+      placeholder: ex. 10.8
     validations:
       required: true
 
   - type: input
     attributes:
       label: Draft (m)
-      placeholder: ex. 5.1
+      placeholder: ex. 3.76
     validations:
       required: true
 
@@ -113,28 +117,21 @@ body:
     attributes:
       label: Standard Displacement (t)
       description: Interchangeable with normal. If only a single number is provided for displacement, assume it's standard.
-      placeholder: ex. 1300
+      placeholder: ex. 1600
     validations:
       required: true
 
   - type: input
     attributes:
-      label: Submerged Displacement (t)
-      placeholder: ex. 1450
+      label: Full Displacement (t)
+      placeholder: ex. 2000
     validations:
       required: false
 
   - type: input
     attributes:
       label: Empty Displacement (t)
-      placeholder: ex. 1000
-    validations:
-      required: false
-
-  - type: input
-    attributes:
-      label: Max Depth (m)
-      placeholder: ex. 350
+      placeholder: ex. 1400
     validations:
       required: false
 
@@ -145,67 +142,63 @@ body:
     validations:
       required: true
 
+  - type: input
+    attributes:
+      label: Max Sea State
+      description: What is the highest Sea State in which this ship can effectively operate?
+      placeholder: ex. 5
+    validations:
+      required: false
+
   - type: markdown
     attributes:
       value: |
         ## Propulsion
-        Please provide some information on propulsion, speeds, etc. for the sub.
 
   - type: dropdown
     attributes:
       label: Primary Propulsion Type
+      description: For CODAG, etc. select "Diesel".
       multiple: false
       options:
-        - Nuclear
-        - Diesel/Electric
-        - Diesel/Electric w/ AIP
-        - Electric (UUVs)
+        - Diesel
+        - Steam
+        - Gas Turbine
+        - Gasoline
+        - Electric
+        - Sail
     validations:
       required: true
 
   - type: input
     attributes:
       label: Propulsion
-      description: Number, make, and type of primary engines. On diesel-electric subs, this will be the diesel engines.
-      placeholder: ex. 4x Fairbanks-Morse Model 38D8 Diesels
+      description: Number, make, and type of engines. For CODAG, etc. you can specify here.
+      placeholder: ex. 2x MAN 12V28/33D Diesels, 1x MT-30 Gas Turbine, CODAG
     validations:
       required: true
-
-  - type: input
-    attributes:
-      label: Flank Speed at Surface (kt)
-      placeholder: ex. 20
-    validations:
-      required: true
-
-  - type: input
-    attributes:
-      label: Flank Speed Submerged (kt)
-      placeholder: ex. 24
-    validations:
-      required: false
-
-  - type: input
-    attributes:
-      label: Range (nm) at Speed (kt)
-      description: This will usually be at the sub's cruise speed.
-      placeholder: ex. 1000nm @ 15kts
-    validations:
-      required: true
-
-  - type: input
-    attributes:
-      label: Range (nm) on AIP
-      description: If the sub is capable of AIP, how far is its range when using this method of propulsion?
-      placeholder: ex. 850
-    validations:
-      required: false
 
   - type: input
     attributes:
       label: Fuel Capacity (kg)
+      placeholder: ex. 1300
     validations:
       required: false
+
+  - type: input
+    attributes:
+      label: Flank Speed (kt)
+      placeholder: ex. 26
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Range (nm) at Speed (kt)
+      description: This will usually be at the ship's cruise speed.
+      placeholder: ex. 1000nm @ 15kts
+    validations:
+      required: true
 
   - type: markdown
     attributes:
@@ -216,11 +209,11 @@ body:
     attributes:
       label: Sensors
       description: | 
-        List the sub's sensors, placing each on a new line as in the example.
+        List the ship's sensors, placing each on a new line as in the example.
       placeholder: |
-        1x OMS 100 / SERO 400 Periscope Suite
-        1x Type 1007 Radar
-        1x DBQS-40 Sonar
+        2x Generic Navigation Radar (Furuno)
+        1x TRS-3D
+        2x STIR 1.2 Mk2
     validations:
       required: true
 
@@ -228,20 +221,11 @@ body:
     attributes:
       label: Mounts
       description: |
-        List the sub's mounts (i.e., weapons), placing each on a new line as in the example. For torpedo tubes, VLS, etc. indicate what weapon(s) are loaded.
+        List the ship's mounts (i.e., weapons), placing each on a new line as in the example. For torpedo tubes, VLS, etc. indicate what weapons are loaded.
       placeholder: |
-        6x 533mm TT (BSA Torpedoes)
-        2x TAU-2000 DL
-    validations:
-      required: true
-
-  - type: textarea
-    attributes:
-      label: Magazines
-      description: |
-        Describe the sub's available reloads, if known and applicable.
-      placeholder: |
-        6x BSA Torpedoes
+        1x 76mm/62 OTO Melara Super Rapido w/ DART Ammo
+        2x 533m Triple Torpedo Tube w/ Black Shark Torpedoes
+        2x MM.40 Quad Launchers w/ Exocet Blk 3A
     validations:
       required: true
 
@@ -252,11 +236,22 @@ body:
 
   - type: textarea
     attributes:
+      label: Aircraft & Docking Facilities
+      description: |
+        List any docking and/or aircraft facilities, placing each on a new line as in the example.
+      placeholder: |
+        2x Davits for 7m RHIB
+        1x Pad/Hangar for Medium Helicopter
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
       label: Comms/Datalinks
       description: |
-        List any known comms systems or datalinks, placing each mount on a new line as in the example.
+        List any known comms systems or datalinks, placing each on a new line as in the example.
       placeholder: |
-        VHF/UHF Radio [Secure]
+        VHF/UHF Radio
         SATCOM
         Link 11
         Link 14
@@ -266,21 +261,27 @@ body:
 
   - type: dropdown
     attributes:
-      label: sub Codes
+      label: Ship Codes
       description: Indicate which (if any) of the following DB codes apply to this vessel.
       multiple: true
       options:
-        - Shock Resistant
-        - Nonmagnetic Hull
-        - Titanium Hull
-        - Double Hull
-        - Shrouded Propulsor
-        - Advanced Propulsor
-        - Lithium-Ion Batteries
-        - Snorkel
-        - No Launch Transient
+        - Nuclear Shock Resistant
+        - Degaussed Steel Hull
+        - Onboard Degaussing Gear (Magnetometer)
+        - Prairie Masker
+        - Advanced Quieting
+        - Passive or Single Stabilizers
+        - Dual or Triple Stabilizers
+        - Hovercraft/SES
+        - Catamaran/Trimaran Multihull
+        - Wooden Hull Construction
+        - Glass Reinforced Polyester (GRP) Construction
+        - All Aluminum Construction
+        - Aluminum Superstructure Only
+        - Built to Mercantile Standards
         - Low Construction Standards
         - Laid Down Before 1930
+        - Helo In-Flight Refuel (HIFR) Capable
     validations:
       required: false
 
@@ -302,6 +303,6 @@ body:
       description: |
         Please list all the sources you used to find the information you provided. For offline sources, provide title, author, and page (as applicable).
 
-        We do check these where possible. If we can't corroborate your information, we may provide replacements from our own sources or discard your request entirely.
+        We do check these. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
     validations:
       required: true
