@@ -1,0 +1,147 @@
+name: Copy Entry
+description: This form is used to request additions based on extant entries.
+# title: "Copy Entry: "
+labels: ["copy"]
+# assignees:
+#   - octocat
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form can be used to request an addition when an identical base platform already exists in the DB.
+
+        The intent is to avoid unnecessary data entry for platforms which are the same or similar to existing entries. For example, a UH-60 that the US sells to the Philippines is still a UH-60; we don't want you to have to spend time providing info as if it's a new aircraft. We know how big it is.
+
+        As a rule of thumb: if the platform you're requesting has the same name as something in the DB, or involves tacking letters onto an existing designation, you're probably good to use this form.
+
+        With that said, if anything has changed beyond the sensors or mounts/loadouts, you may need to file a new platform request.
+
+  - type: dropdown
+    attributes:
+      label: DB Selector
+      description: Is this for DB3K, CWDB, or both? If copying from one DB to the other, indicate only the destination DB.
+      multiple: false
+      options:
+        - DB3K
+        - CWDB
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Origin Info
+
+  - type: input
+    attributes:
+      label: DBID to Copy
+      description: Which DBID should be copied as a baseline? If cross-DB, indicate source DB as well.
+      placeholder: ex. Aircraft 4071 (CWDB)
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Basic Information for New Entry
+
+  - type: dropdown
+    attributes:
+      label: Hypothetical
+      description: Is this copy to create a hypothetical platform, i.e. one not yet or never placed in service?
+      multiple: false
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Name
+      description: Provide new designation and name (where applicable).
+      placeholder: ex. SF.260W Genet [Warrior]
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Country
+      placeholder: ex. Zimbabwe
+    validations:
+      required: true
+      
+  - type: input
+    attributes:
+      label: Service
+      placeholder: ex. Air Force
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: In Commission
+      description: When was this aircraft in service for the specified country?
+      placeholder: ex. 1976-Present
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Adjustments
+
+  - type: textarea
+    attributes:
+      label: Physical/Performance Changes
+      description: Were there any changes to the build/performance of the platform (e.g. engine switched for domestic version)?
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Sensors
+      description: | 
+        List any changes/additions to the platform's sensors, placing each on a new line as in the example.
+      placeholder: |
+        1x ASELFLIR-300T replaced by CATS
+        FCR removed
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Mounts
+      description: |
+        List any changes to the platform's mounts (i.e., weapons), placing each on a new line as in the example. For aircraft, this will include only non-removable weapons, e.g. cannon; missiles, bombs, etc. should be listed as loadout options.
+      placeholder: |
+        Exocet missiles removed
+        7.62mm MGs replaced w/ 12.7mm Typhoon RWS
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Loadout Options
+      description: |
+        If for an aircraft and specific loadouts are known, list them here. In addition / otherwise, please list the weapons that the aircraft can employ.
+      placeholder: |
+        - 12x AMM-1 Hybrid Guided Multipurpose Missiles
+        - 12x Mk82 LDGB
+        - 6x RMS-1 AShM
+        - 4x UUM-7 Micro-Missile Pods (14x HMM-01/pod)
+
+        Or combinations of the above.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Sources
+      description: |
+        Please list all the sources you used to find the information you provided. For offline sources, provide title, author, and page (as applicable).
+
+        We do check these. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
+    validations:
+      required: true

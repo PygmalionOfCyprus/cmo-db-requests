@@ -28,6 +28,17 @@ body:
     validations:
       required: true
 
+  - type: input
+    attributes:
+      label: Baseline
+      description: |
+        Is there is a sub in the DB you recommend we start from? This is different from a "Copy Entry" in that most of its values will be changed, but we can use this to estimate anything we aren't sure of.
+
+        For example, a Type 035 is different enough from a Type 033 that we couldn't simply copy one to model the other -- but it'd be a fair starting point.
+      placeholder: ex. 2530
+    validations:
+      required: false
+
   - type: markdown
     attributes:
       value: |

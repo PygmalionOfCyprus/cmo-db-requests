@@ -11,7 +11,9 @@ body:
       value: |
         Thank you for bringing our attention to a bug! This form is similar to the update request form, but will attract more attention from the devs.
 
-        Only use this form for things which are actually *broken*: i.e., they don't work, or are so significantly screwed up that they make gameplay impossible. Typos, incorrect weapons, etc. should be reported via a normal update request.
+        Only use this form for things which are actually *broken*: i.e., they don't work, or are so significantly screwed up that they make gameplay impossible. For example: a SAM site that can't target aircraft.
+        
+        Typos, inaccurate entries, etc. should be reported via a normal update request.
 
   - type: dropdown
     attributes:

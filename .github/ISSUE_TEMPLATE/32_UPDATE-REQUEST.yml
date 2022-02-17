@@ -9,7 +9,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for requesting an update to the DB. An "update" can be anything from correcting a typo to completely changing a platform's mounts.
+        Thank you for requesting an update to the DB. An "update" is generally filed to correct inaccurate information and can be anything from correcting a typo to replacing a platform's mounts.
+
+      # If current entries are correct but changed/will change in a certain period (e.g., a ship's AShMs are upgraded), please file a "Copy Entry" request.
 
   - type: dropdown
     attributes:
