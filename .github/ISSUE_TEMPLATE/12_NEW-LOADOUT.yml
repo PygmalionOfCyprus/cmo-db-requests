@@ -1,7 +1,7 @@
 name: New Loadout(s) Request
 description: This form is used to request new loadouts for one or multiple aircraft.
 # title: "New Loadout: "
-labels: ["update", "aircraft"]
+labels: ["loadout", "aircraft"]
 # assignees:
 #   - octocat
 

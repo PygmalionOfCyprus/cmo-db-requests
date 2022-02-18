@@ -5,3 +5,7 @@ DB3K:
 # Add/remove 'CWDB' label if DB Selector is set to 'CWDB' or "Both".
 CWDB:
   - '### DB Selector\n{1,}(CWDB|Both)'
+
+# Add/remove 'hypo' label if Hypothetical selector is set to 'Yes'.
+hypo:
+  - '### Hypothetical\n{1,}Yes'
