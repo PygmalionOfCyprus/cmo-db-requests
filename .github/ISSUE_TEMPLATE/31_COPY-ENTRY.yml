@@ -94,13 +94,6 @@ body:
 
   - type: textarea
     attributes:
-      label: Physical/Performance Changes
-      description: Were there any changes to the build/performance of the platform (e.g. engine switched for domestic version)?
-    validations:
-      required: false
-
-  - type: textarea
-    attributes:
       label: Sensors
       description: | 
         List any changes/additions to the platform's sensors, placing each on a new line as in the example.
@@ -133,6 +126,13 @@ body:
         - 4x UUM-7 Micro-Missile Pods (14x HMM-01/pod)
 
         Or combinations of the above.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Other Changes
+      description: Are there any other changes we should know about?
     validations:
       required: false
 

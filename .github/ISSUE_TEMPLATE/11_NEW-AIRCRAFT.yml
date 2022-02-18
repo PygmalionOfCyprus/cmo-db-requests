@@ -23,11 +23,6 @@ body:
     validations:
       required: true
 
-  - type: markdown
-    attributes:
-      value: |
-        ## Basic Information
-
   - type: input
     attributes:
       label: Baseline
@@ -38,6 +33,11 @@ body:
       placeholder: ex. 2530
     validations:
       required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Basic Information
 
   - type: dropdown
     attributes:
