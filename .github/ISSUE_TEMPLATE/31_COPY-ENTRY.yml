@@ -36,7 +36,7 @@ body:
   - type: input
     attributes:
       label: DBID to Copy
-      description: Which DBID should be copied as a baseline? If cross-DB, indicate source DB as well.
+      description: Which DBID should be copied as a baseline? Please try to use same-DB references wherever possible. If you must provide a cross-DB reference, indicate the DB from which to copy.
       placeholder: ex. Aircraft 4071 (CWDB)
     validations:
       required: true
