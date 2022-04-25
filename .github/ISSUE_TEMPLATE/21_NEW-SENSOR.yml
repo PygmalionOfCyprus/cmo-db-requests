@@ -93,6 +93,14 @@ body:
       value: |
         ## Capabilities
 
+  - type: input
+    attributes:
+      label: Range (nm)
+      description: Use instrumented range. Detailed detection info (e.g. 60nm w/ 5m2 RCS) can go in the comments section.
+      placeholder: ex. 0.2-85.0
+    validations:
+      required: true
+
   - type: dropdown
     attributes:
       label: Sensor Capabilities
