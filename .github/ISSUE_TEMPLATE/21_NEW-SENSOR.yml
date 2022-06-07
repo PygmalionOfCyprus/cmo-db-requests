@@ -265,14 +265,14 @@ body:
 
   - type: input
     attributes:
-      label: Pulse Width (ms)
+      label: Pulse Width (μs)
       placeholder: ex. 1.00
     validations:
       required: false
 
   - type: input
     attributes:
-      label: Blind Time (ms)
+      label: Blind Time (μs)
       placeholder: ex. 1.00
     validations:
       required: false
