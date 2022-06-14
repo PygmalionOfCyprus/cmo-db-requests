@@ -80,6 +80,14 @@ body:
     validations:
       required: false
 
+  - type: input
+    attributes:
+      label: Number in Service
+      description: If this aircraft was in limited service, how many were there?
+      placeholder: ex. 12x, 1x Crashed 2011
+    validations:
+      required: false
+
   - type: markdown
     attributes:
       value: |
@@ -222,7 +230,7 @@ body:
   - type: textarea
     attributes:
       label: Sensors
-      description: | 
+      description: |
         List the aircraft's sensors, placing each on a new line as in the example.
       placeholder: |
         1x AWG-20 FCR

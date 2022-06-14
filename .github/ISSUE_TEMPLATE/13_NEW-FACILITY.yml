@@ -71,7 +71,7 @@ body:
         - Fuel
         - Supply
     validations:
-      required: true 
+      required: true
 
   - type: input
     attributes:
@@ -92,6 +92,14 @@ body:
       label: In Commission
       description: When was the facility in service?
       placeholder: ex. 1959-1961
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Number in Service
+      description: If this facility was in limited service, how many were there?
+      placeholder: ex. 3x, 1x Decom. 1960
     validations:
       required: false
 

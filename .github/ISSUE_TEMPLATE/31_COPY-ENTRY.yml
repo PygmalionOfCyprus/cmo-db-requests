@@ -71,7 +71,7 @@ body:
       placeholder: ex. Zimbabwe
     validations:
       required: true
-      
+
   - type: input
     attributes:
       label: Service
@@ -82,8 +82,16 @@ body:
   - type: input
     attributes:
       label: In Commission
-      description: When was this aircraft in service for the specified country?
+      description: When was this platform in service for the specified country?
       placeholder: ex. 1976-Present
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Number in Service
+      description: If this platform was in limited service, how many were there?
+      placeholder: ex. 12x, 2x Destroyed 1991
     validations:
       required: false
 
@@ -95,7 +103,7 @@ body:
   - type: textarea
     attributes:
       label: Sensors
-      description: | 
+      description: |
         List any changes/additions to the platform's sensors, placing each on a new line as in the example.
       placeholder: |
         1x ASELFLIR-300T replaced by CATS

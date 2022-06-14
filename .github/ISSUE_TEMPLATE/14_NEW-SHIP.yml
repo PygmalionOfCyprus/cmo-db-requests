@@ -92,9 +92,17 @@ body:
       label: In Commission
       description: |
         When was the *class* in service?
-        
+
         If requesting a specific vessel, this will match the vessel's service dates. If requesting a class (and therefore modelling a nameship), the out-of-service date may be much later than the nameship's decommissioning.
       placeholder: ex. 1991-Present
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Number in Service
+      description: If this ship was in limited service, how many were there?
+      placeholder: ex. 5x, 3x Sunk/Scuttled 1993
     validations:
       required: false
 
@@ -219,7 +227,7 @@ body:
   - type: textarea
     attributes:
       label: Sensors
-      description: | 
+      description: |
         List the ship's sensors, placing each on a new line as in the example.
       placeholder: |
         2x Generic Navigation Radar (Furuno)
