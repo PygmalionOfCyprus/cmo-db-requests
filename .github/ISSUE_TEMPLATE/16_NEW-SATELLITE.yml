@@ -133,9 +133,29 @@ body:
 
   - type: textarea
     attributes:
+      label: COSPAR ID
+      description: |
+        Provide the COSPAR ID for each satellite in the series.
+      placeholder: |
+        USH-10: 2006-015B
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Launch/Comm. & Decom./Deorbit Date(s)
+      description: |
+        Provide the launch dates (+ commission date, if different) and decom./deorbit dates for each satellite in the series. This is different from the "In Commision" date provided earlier, which covers the entire series.
+      placeholder: |
+        NAG-15A: 24 DEC 84 // 28 APR 04 (Deorbit: 4 OCT 07)
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
       label: TLE
-      description: | 
-        Provide a two or three line TLE for each satellite in the series. If there were many launches, you may instead provide a link to an online source in which this information is provided.
+      description: |
+        Provide a two or three line TLE for each satellite in the series.
       placeholder: |
         1 46320U 20061BA  21193.49823640  .00000228  00000-0  17253-4 0  9990
         2 46320  97.4876 266.6950 0001318 223.9323 261.1888 15.11370748 47168
@@ -150,8 +170,8 @@ body:
   - type: textarea
     attributes:
       label: Sensors
-      description: | 
-        List the satellite's sensors, placing each mount on a new line as in the example. Generic sensors are acceptable.
+      description: |
+        List the satellite's sensors, placing each mount on a new line as in the example. Generic sensors are fine.
       placeholder: |
         1x Generic Satellite Visual Camera (3rd Gen)
         1x Generic Satellite SIGINT
