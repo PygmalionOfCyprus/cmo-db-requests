@@ -1,0 +1,27 @@
+name: Issue Manager
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  issue_comment:
+    types:
+      - created
+  issues:
+    types:
+      - labeled
+  workflow_dispatch:
+
+jobs:
+  issue-manager:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tiangolo/issue-manager@0.4.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config: >
+            {
+                "question": {
+                    "delay": 1814000,
+                    "message": "Requested additional info was not provided within three weeks, so the issue was closed. But don't worry: if you provide info later, the ticket will be reopened!"
+                }
+            }
