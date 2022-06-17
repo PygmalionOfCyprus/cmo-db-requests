@@ -11,6 +11,8 @@ body:
       value: |
         Thank you for taking the time to request a new weapon.
 
+        Please note that filing this form will ONLY result in the weapon itself being added, not necessarily any associated loadouts, mounts, etc. These should be requested separately.
+
         ### A Note on Requesting Subcomponents
         Subcomponents -- such as weapons and sensors -- are of little use without a host. While it is true that weapon records / sensors may be added to various platforms in the mission editor, a weapon/sensor that is not currently employed on any platform in the DB is rarely worth the time it takes to add.
 
@@ -111,16 +113,32 @@ body:
   - type: input
     attributes:
       label: Target Altitude / Depth (ft)
-      description: How deep/high can a target be and still be successfully engaged by this weapon? Specify AGL or ASL.
+      description: How deep/high can a target be and still be successfully engaged by this weapon? Specify AGL or ASL (or provide both).
       placeholder: ex. 200ft AGL - 35000ft ASL
     validations:
       required: false
 
   - type: input
     attributes:
+      label: Target Speed (kts)
+      description: How slow/fast can a target be and still be successfully engaged by this weapon?
+      placeholder: ex. 50kts - 2000kts
+    validations:
+      required: false
+
+  - type: input
+    attributes:
       label: Launch Altitude / Depth (ft)
-      description: How deep/high can a shooter be and still employ this weapon? Specify AGL or ASL.
+      description: How deep/high can a shooter be and still employ this weapon? Specify AGL or ASL (or provide both).
       placeholder: ex. 200ft AGL - 35000ft ASL
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: LaunchSpeed (kts)
+      description: How slow/fast can a shooter be and still employ this weapon?
+      placeholder: ex. 270kts - 650kts
     validations:
       required: false
 
@@ -178,7 +196,7 @@ body:
   - type: textarea
     attributes:
       label: Sensors
-      description: | 
+      description: |
         List the weapon's sensors, placing each on a new line as in the example. Most weapons will have one or two for terminal guidance.
 
         If you have specific information about the seekers' capabilities, you can include it here.
@@ -276,7 +294,7 @@ body:
       label: Sources
       description: |
         Please list all the sources you used to find the information you provided. For offline sources, provide title, author, and page (as applicable).
-        
+
         We do check these. If we can't corroborate your information, we may provide replacement data from our own sources or discard your request entirely.
     validations:
       required: true
