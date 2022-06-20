@@ -101,6 +101,22 @@ body:
     validations:
       required: true
 
+  - type: input
+    attributes:
+      label: Horizontal Arc (deg)
+      description: If the sensor has a known horizontal arc/limitation, enter it here. (This is most relevant for aircraft radars.)
+      placeholder: ex. 60deg
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Vertical Arc (deg)
+      description: If the sensor has a known vertical arc/limitation, enter it here. (This is most relevant for older aircraft radars.)
+      placeholder: ex. 20deg
+    validations:
+      required: false
+
   - type: dropdown
     attributes:
       label: Sensor Capabilities
