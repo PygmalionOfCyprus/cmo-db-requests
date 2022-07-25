@@ -33,8 +33,8 @@ body:
   - type: input
     attributes:
       label: Affected DBID(s)
-      description: Which DBIDs does this request apply to? If covering a wide spread of units, a simple descriptor will suffice.
-      placeholder: ex. 1305
+      description: Which DBID(s) does this request apply to? (Please preface the ID(s) with their annex, as in the example.)
+      placeholder: ex. Facility 1305, 1402
     validations:
       required: true
 
