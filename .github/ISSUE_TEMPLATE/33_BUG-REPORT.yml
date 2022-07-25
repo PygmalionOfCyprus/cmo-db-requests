@@ -12,7 +12,7 @@ body:
         Thank you for bringing our attention to a bug! This form is similar to the update request form, but will attract more attention from the devs.
 
         Only use this form for things which are actually *broken*: i.e., they don't work, or are so significantly screwed up that they make gameplay impossible. For example: a SAM site that can't target aircraft.
-        
+
         Typos, inaccurate entries, etc. should be reported via a normal update request.
 
   - type: dropdown
@@ -35,8 +35,8 @@ body:
   - type: input
     attributes:
       label: Affected DBID(s)
-      description: Which DBIDs are affected by this bug? If the bug affects a wide array of units, a simple descriptor will suffice.
-      placeholder: ex. 1305
+      description: Which DBID(s) are affected by this bug? (Please preface the ID with its annex, as in the example.) If the bug affects a wide array of units, a simple descriptor will suffice.
+      placeholder: ex. Weapon 1305
     validations:
       required: true
 
