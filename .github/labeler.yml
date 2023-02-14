@@ -1,11 +1,36 @@
-# Add/remove 'DB3K' label if DB Selector is set to 'DB3K' or "Both".
+# Add 'DB3K' label if DB Selector is set to 'DB3K' or "Both".
 DB3K:
-  - '### DB Selector\n{1,}(DB3K|Both)'
+  - '### DB Selector\n+(DB3K|Both)'
 
-# Add/remove 'CWDB' label if DB Selector is set to 'CWDB' or "Both".
+# Add 'CWDB' label if DB Selector is set to 'CWDB' or "Both".
 CWDB:
-  - '### DB Selector\n{1,}(CWDB|Both)'
+  - '### DB Selector\n+(CWDB|Both)'
 
-# Add/remove 'hypo' label if Hypothetical selector is set to 'Yes'.
+# Add 'hypo' label if Hypothetical selector is set to 'Yes'.
 hypo:
-  - '### Hypothetical\n{1,}Yes'
+  - '### Hypothetical\n+Yes'
+
+# Add respective annex labels to update/copy requests if Affected DBID / DBID to Copy field begins with key letters.
+aircraft:
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:(?:A|a)ir\w*)|(?:AC|ac)|(?:A\/C|a\/c)) *#?\d{0,4}'
+
+facility:
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:F|f)ac\w*) *#?\d{0,4}'
+
+ship:
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:S|s)hip|(?:B|b)oat) *#?\d{0,4}'
+
+submarine:
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:S|s)ub\w*) *#?\d{0,4}'
+
+weapon:
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:W|w)e\w*) *#?\d{0,4}'
+
+sensor:
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:S|s)en\w*) *#?\d{0,4}'
+
+satellite:
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:S|s)at\w*) *#?\d{0,4}'
+
+loadout:
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:L|l)oad\w*) *#?\d{0,4}'
