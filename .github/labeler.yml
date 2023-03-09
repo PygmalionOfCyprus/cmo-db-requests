@@ -12,25 +12,25 @@ hypo:
 
 # Add respective annex labels to update/copy requests if Affected DBID / DBID to Copy field begins with key letters.
 aircraft:
-  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:(?:A|a)ir\w*)|(?:AC|ac)|(?:A\/C|a\/c)) *#?\d{0,4}'
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:[Cc][Ww])?[Dd][Bb](?:3[Kk])?)? *[Aa](?:ir\w*|\/?[Cc]) *#?\d{0,4}'
 
 facility:
-  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:F|f)ac\w*) *#?\d{0,4}'
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:[Cc][Ww])?[Dd][Bb](?:3[Kk])?)? *[Ff]a\w* *#?\d{0,4}'
 
 ship:
-  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:S|s)hip|(?:B|b)oat) *#?\d{0,4}'
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:[Cc][Ww])?[Dd][Bb](?:3[Kk])?)? *[Ss]hip|[Bb]oat *#?\d{0,4}'
 
 submarine:
-  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:S|s)ub\w*) *#?\d{0,4}'
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:[Cc][Ww])?[Dd][Bb](?:3[Kk])?)? *[Ss]u\w* *#?\d{0,4}'
 
 weapon:
-  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:W|w)e\w*) *#?\d{0,4}'
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:[Cc][Ww])?[Dd][Bb](?:3[Kk])?)? *[Ww]e\w* *#?\d{0,4}'
 
 sensor:
-  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:S|s)en\w*) *#?\d{0,4}'
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:[Cc][Ww])?[Dd][Bb](?:3[Kk])?)? *[Ss]e\w* *#?\d{0,4}'
 
 satellite:
-  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:S|s)at\w*) *#?\d{0,4}'
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:[Cc][Ww])?[Dd][Bb](?:3[Kk])?)? *[Ss]a\w* *#?\d{0,4}'
 
 loadout:
-  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:L|l)oad\w*) *#?\d{0,4}'
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:[Cc][Ww])?[Dd][Bb](?:3[Kk])?)? *[Ll]o\w* *#?\d{0,4}'
