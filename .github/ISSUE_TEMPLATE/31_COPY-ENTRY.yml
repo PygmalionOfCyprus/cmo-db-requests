@@ -25,6 +25,7 @@ body:
       options:
         - DB3K
         - CWDB
+        - Both
     validations:
       required: true
 
