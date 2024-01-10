@@ -37,3 +37,6 @@ loadout:
 
 groundunit:
   - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:[Cc][Ww])?[Dd][Bb](?:3[Kk])?)? *[Gg]r\w* *#?\d{0,4}'
+
+mount:
+  - '### (?:Affected DBID\(s\)|DBID to Copy)\n+(?:(?:[Cc][Ww])?[Dd][Bb](?:3[Kk])?)? *[Mm]o\w* *#?\d{0,4}'
