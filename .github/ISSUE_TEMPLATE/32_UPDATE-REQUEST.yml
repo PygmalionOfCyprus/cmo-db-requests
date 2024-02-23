@@ -29,12 +29,29 @@ body:
     attributes:
       value: |
         ## Update Details
-
+  
+  - type: dropdown
+    attributes:
+      label: Type Selector
+      description: What type of equipment is this request for?
+      multiple: false
+      options:
+        - Aircraft
+        - Loadout
+        - Facility
+        - Ship
+        - Submarine
+        - Satellite
+        - Sensor
+        - Weapon
+    validations:
+      required: true
+      
   - type: input
     attributes:
       label: Affected DBID(s)
-      description: Which DBID(s) does this request apply to? (Please preface the ID(s) with their annex, as in the example.)
-      placeholder: ex. Facility 1305, 1402
+      description: Which DBID(s) does this request apply to?
+      placeholder: ex. 1305, 1402
     validations:
       required: true
 
